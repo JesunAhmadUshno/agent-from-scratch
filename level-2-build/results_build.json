@@ -1,0 +1,1049 @@
+{
+  "results": [
+    {
+      "answer": 60,
+      "category": "single_tool",
+      "expected_answer": 60,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "expression": "7 * 8 + 4"
+          },
+          "optional": false,
+          "purpose": "compute the expression",
+          "step": 1,
+          "tool": "calculator"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B01",
+      "tools_used": [
+        "calculator"
+      ],
+      "trace": [
+        {
+          "args": {
+            "expression": "7 * 8 + 4"
+          },
+          "event": "observe",
+          "observation": 60,
+          "step": 1,
+          "tool": "calculator"
+        }
+      ],
+      "type": "calculator"
+    },
+    {
+      "answer": 5,
+      "category": "single_tool",
+      "expected_answer": 5,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "text": "agents plan act and observe"
+          },
+          "optional": false,
+          "purpose": "count the words in the text",
+          "step": 1,
+          "tool": "word_count"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B02",
+      "tools_used": [
+        "word_count"
+      ],
+      "trace": [
+        {
+          "args": {
+            "text": "agents plan act and observe"
+          },
+          "event": "observe",
+          "observation": 5,
+          "step": 1,
+          "tool": "word_count"
+        }
+      ],
+      "type": "word_count"
+    },
+    {
+      "answer": "agent",
+      "category": "kb_search",
+      "expected_answer": "agent",
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "query": "system perceives plans acts using tools complete task"
+          },
+          "optional": false,
+          "purpose": "search the knowledge base by keywords",
+          "step": 1,
+          "tool": "kb_search"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B03",
+      "tools_used": [
+        "kb_search"
+      ],
+      "trace": [
+        {
+          "args": {
+            "query": "system perceives plans acts using tools complete task"
+          },
+          "event": "observe",
+          "observation": "agent",
+          "step": 1,
+          "tool": "kb_search"
+        }
+      ],
+      "type": "kb_search_task"
+    },
+    {
+      "answer": "memory",
+      "category": "kb_search",
+      "expected_answer": "memory",
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "query": "store save recall information across steps"
+          },
+          "optional": false,
+          "purpose": "search the knowledge base by keywords",
+          "step": 1,
+          "tool": "kb_search"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B04",
+      "tools_used": [
+        "kb_search"
+      ],
+      "trace": [
+        {
+          "args": {
+            "query": "store save recall information across steps"
+          },
+          "event": "observe",
+          "observation": "memory",
+          "step": 1,
+          "tool": "kb_search"
+        }
+      ],
+      "type": "kb_search_task"
+    },
+    {
+      "answer": 6.2137119224,
+      "category": "converter",
+      "expected_answer": 6.2137119224,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "conversion": "km_to_miles",
+            "value": 10
+          },
+          "optional": false,
+          "purpose": "convert the value",
+          "step": 1,
+          "tool": "unit_converter"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B05",
+      "tools_used": [
+        "unit_converter"
+      ],
+      "trace": [
+        {
+          "args": {
+            "conversion": "km_to_miles",
+            "value": 10
+          },
+          "event": "observe",
+          "observation": 6.2137119224,
+          "step": 1,
+          "tool": "unit_converter"
+        }
+      ],
+      "type": "converter"
+    },
+    {
+      "answer": 212,
+      "category": "converter",
+      "expected_answer": 212,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "conversion": "c_to_f",
+            "value": 100
+          },
+          "optional": false,
+          "purpose": "convert the value",
+          "step": 1,
+          "tool": "unit_converter"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B06",
+      "tools_used": [
+        "unit_converter"
+      ],
+      "trace": [
+        {
+          "args": {
+            "conversion": "c_to_f",
+            "value": 100
+          },
+          "event": "observe",
+          "observation": 212,
+          "step": 1,
+          "tool": "unit_converter"
+        }
+      ],
+      "type": "converter"
+    },
+    {
+      "answer": 22.0462262185,
+      "category": "converter",
+      "expected_answer": 22.0462262185,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "conversion": "kg_to_lb",
+            "value": 10
+          },
+          "optional": false,
+          "purpose": "convert the value",
+          "step": 1,
+          "tool": "unit_converter"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B07",
+      "tools_used": [
+        "unit_converter"
+      ],
+      "trace": [
+        {
+          "args": {
+            "conversion": "kg_to_lb",
+            "value": 10
+          },
+          "event": "observe",
+          "observation": 22.0462262185,
+          "step": 1,
+          "tool": "unit_converter"
+        }
+      ],
+      "type": "converter"
+    },
+    {
+      "answer": 42,
+      "category": "multi_step",
+      "expected_answer": 42,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "expression": "6 * 7"
+          },
+          "optional": false,
+          "purpose": "compute the expression",
+          "step": 1,
+          "tool": "calculator"
+        },
+        {
+          "args": {
+            "key": "calc_result",
+            "value": "$prev"
+          },
+          "optional": false,
+          "purpose": "store the computed result",
+          "step": 2,
+          "tool": "remember"
+        },
+        {
+          "args": {
+            "key": "calc_result"
+          },
+          "optional": false,
+          "purpose": "recall the stored result",
+          "step": 3,
+          "tool": "recall"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 3,
+      "success": true,
+      "task_id": "B08",
+      "tools_used": [
+        "calculator",
+        "remember",
+        "recall"
+      ],
+      "trace": [
+        {
+          "args": {
+            "expression": "6 * 7"
+          },
+          "event": "observe",
+          "observation": 42,
+          "step": 1,
+          "tool": "calculator"
+        },
+        {
+          "args": {
+            "key": "calc_result",
+            "value": 42
+          },
+          "event": "observe",
+          "observation": 42,
+          "step": 2,
+          "tool": "remember"
+        },
+        {
+          "args": {
+            "key": "calc_result"
+          },
+          "event": "observe",
+          "observation": 42,
+          "step": 3,
+          "tool": "recall"
+        }
+      ],
+      "type": "multi_step"
+    },
+    {
+      "answer": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+      "category": "multi_step",
+      "expected_answer": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "query": "repeats plan act observe until done limit reached"
+          },
+          "optional": false,
+          "purpose": "find the best matching entry key",
+          "step": 1,
+          "tool": "kb_search"
+        },
+        {
+          "args": {
+            "key": "$prev"
+          },
+          "optional": false,
+          "purpose": "look up the entry found by search",
+          "step": 2,
+          "tool": "kb_lookup"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 2,
+      "success": true,
+      "task_id": "B09",
+      "tools_used": [
+        "kb_search",
+        "kb_lookup"
+      ],
+      "trace": [
+        {
+          "args": {
+            "query": "repeats plan act observe until done limit reached"
+          },
+          "event": "observe",
+          "observation": "loop",
+          "step": 1,
+          "tool": "kb_search"
+        },
+        {
+          "args": {
+            "key": "loop"
+          },
+          "event": "observe",
+          "observation": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+          "step": 2,
+          "tool": "kb_lookup"
+        }
+      ],
+      "type": "search_then_lookup"
+    },
+    {
+      "answer": 16.09344,
+      "category": "multi_step",
+      "expected_answer": 16.09344,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "conversion": "miles_to_km",
+            "value": 10
+          },
+          "optional": false,
+          "purpose": "convert the value",
+          "step": 1,
+          "tool": "unit_converter"
+        },
+        {
+          "args": {
+            "key": "dist_km",
+            "value": "$prev"
+          },
+          "optional": false,
+          "purpose": "store the converted value",
+          "step": 2,
+          "tool": "remember"
+        },
+        {
+          "args": {
+            "key": "dist_km"
+          },
+          "optional": false,
+          "purpose": "recall the stored converted value",
+          "step": 3,
+          "tool": "recall"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 3,
+      "success": true,
+      "task_id": "B10",
+      "tools_used": [
+        "unit_converter",
+        "remember",
+        "recall"
+      ],
+      "trace": [
+        {
+          "args": {
+            "conversion": "miles_to_km",
+            "value": 10
+          },
+          "event": "observe",
+          "observation": 16.09344,
+          "step": 1,
+          "tool": "unit_converter"
+        },
+        {
+          "args": {
+            "key": "dist_km",
+            "value": 16.09344
+          },
+          "event": "observe",
+          "observation": 16.09344,
+          "step": 2,
+          "tool": "remember"
+        },
+        {
+          "args": {
+            "key": "dist_km"
+          },
+          "event": "observe",
+          "observation": 16.09344,
+          "step": 3,
+          "tool": "recall"
+        }
+      ],
+      "type": "convert_memory"
+    },
+    {
+      "answer": "Ottawa",
+      "category": "memory_persistence",
+      "expected_answer": "Ottawa",
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "key": "capital_note",
+            "value": "Ottawa"
+          },
+          "optional": false,
+          "purpose": "store the value in persistent memory",
+          "step": 1,
+          "tool": "remember"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B11",
+      "tools_used": [
+        "remember"
+      ],
+      "trace": [
+        {
+          "args": {
+            "key": "capital_note",
+            "value": "Ottawa"
+          },
+          "event": "observe",
+          "observation": "Ottawa",
+          "step": 1,
+          "tool": "remember"
+        }
+      ],
+      "type": "memory_write"
+    },
+    {
+      "answer": "Ottawa",
+      "category": "memory_persistence",
+      "expected_answer": "Ottawa",
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "key": "capital_note"
+          },
+          "optional": false,
+          "purpose": "recall a value stored by an earlier task",
+          "step": 1,
+          "tool": "recall"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B12",
+      "tools_used": [
+        "recall"
+      ],
+      "trace": [
+        {
+          "args": {
+            "key": "capital_note"
+          },
+          "event": "observe",
+          "observation": "Ottawa",
+          "step": 1,
+          "tool": "recall"
+        }
+      ],
+      "type": "recall_persist"
+    },
+    {
+      "answer": 42,
+      "category": "memory_persistence",
+      "expected_answer": 42,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "key": "calc_result"
+          },
+          "optional": false,
+          "purpose": "recall a value stored by an earlier task",
+          "step": 1,
+          "tool": "recall"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B13",
+      "tools_used": [
+        "recall"
+      ],
+      "trace": [
+        {
+          "args": {
+            "key": "calc_result"
+          },
+          "event": "observe",
+          "observation": 42,
+          "step": 1,
+          "tool": "recall"
+        }
+      ],
+      "type": "recall_persist"
+    },
+    {
+      "answer": 81,
+      "category": "recovery",
+      "expected_answer": 81,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "expression": 123
+          },
+          "optional": false,
+          "purpose": "compute with the supplied arguments",
+          "step": 1,
+          "tool": "calculator"
+        }
+      ],
+      "recovered": true,
+      "recoveries": [
+        "retry_correct"
+      ],
+      "replans": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "B14",
+      "tools_used": [
+        "calculator",
+        "calculator"
+      ],
+      "trace": [
+        {
+          "args": {
+            "expression": 123
+          },
+          "error": "calculator: 'expression' must be a non-empty string",
+          "event": "error",
+          "step": 1,
+          "tool": "calculator"
+        },
+        {
+          "event": "replan",
+          "step": 1,
+          "strategy": "retry_correct",
+          "tool": "calculator"
+        },
+        {
+          "args": {
+            "expression": "9 * 9"
+          },
+          "event": "observe",
+          "observation": 81,
+          "step": 2,
+          "tool": "calculator"
+        }
+      ],
+      "type": "recovery_retry"
+    },
+    {
+      "answer": "agent",
+      "category": "recovery",
+      "expected_answer": "agent",
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "key": "agents_missing"
+          },
+          "optional": false,
+          "purpose": "look up the requested entry",
+          "step": 1,
+          "tool": "kb_lookup"
+        }
+      ],
+      "recovered": true,
+      "recoveries": [
+        "fallback_tool"
+      ],
+      "replans": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "B15",
+      "tools_used": [
+        "kb_lookup",
+        "kb_search"
+      ],
+      "trace": [
+        {
+          "args": {
+            "key": "agents_missing"
+          },
+          "error": "kb_lookup: no entry for key 'agents_missing'",
+          "event": "error",
+          "step": 1,
+          "tool": "kb_lookup"
+        },
+        {
+          "event": "replan",
+          "step": 1,
+          "strategy": "fallback_tool",
+          "tool": "kb_lookup"
+        },
+        {
+          "args": {
+            "query": "system perceives plans acts using tools complete task"
+          },
+          "event": "observe",
+          "observation": "agent",
+          "step": 2,
+          "tool": "kb_search"
+        }
+      ],
+      "type": "recovery_fallback"
+    },
+    {
+      "answer": 15,
+      "category": "recovery",
+      "expected_answer": 15,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "key": "optional_missing"
+          },
+          "optional": true,
+          "purpose": "optional lookup before the main step",
+          "step": 1,
+          "tool": "kb_lookup"
+        },
+        {
+          "args": {
+            "expression": "3 * 5"
+          },
+          "optional": false,
+          "purpose": "compute the main expression",
+          "step": 2,
+          "tool": "calculator"
+        }
+      ],
+      "recovered": true,
+      "recoveries": [
+        "skip_step"
+      ],
+      "replans": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "B16",
+      "tools_used": [
+        "kb_lookup",
+        "calculator"
+      ],
+      "trace": [
+        {
+          "args": {
+            "key": "optional_missing"
+          },
+          "error": "kb_lookup: no entry for key 'optional_missing'",
+          "event": "error",
+          "step": 1,
+          "tool": "kb_lookup"
+        },
+        {
+          "event": "replan",
+          "step": 1,
+          "strategy": "skip_step",
+          "tool": "kb_lookup"
+        },
+        {
+          "args": {
+            "expression": "3 * 5"
+          },
+          "event": "observe",
+          "observation": 15,
+          "step": 2,
+          "tool": "calculator"
+        }
+      ],
+      "type": "recovery_skip"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "error": "calculator: division by zero",
+      "expected_answer": null,
+      "expected_success": false,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "expression": "10 / 0"
+          },
+          "optional": false,
+          "purpose": "compute the expression",
+          "step": 1,
+          "tool": "calculator"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [
+        "abort"
+      ],
+      "replans": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "B17",
+      "tools_used": [
+        "calculator"
+      ],
+      "trace": [
+        {
+          "args": {
+            "expression": "10 / 0"
+          },
+          "error": "calculator: division by zero",
+          "event": "error",
+          "step": 1,
+          "tool": "calculator"
+        }
+      ],
+      "type": "unrecoverable"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "error": "recall: no value stored for key 'never_stored_xyz'",
+      "expected_answer": null,
+      "expected_success": false,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "key": "never_stored_xyz"
+          },
+          "optional": false,
+          "purpose": "recall a value stored by an earlier task",
+          "step": 1,
+          "tool": "recall"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [
+        "abort"
+      ],
+      "replans": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "B18",
+      "tools_used": [
+        "recall"
+      ],
+      "trace": [
+        {
+          "args": {
+            "key": "never_stored_xyz"
+          },
+          "error": "recall: no value stored for key 'never_stored_xyz'",
+          "event": "error",
+          "step": 1,
+          "tool": "recall"
+        }
+      ],
+      "type": "recall_persist"
+    },
+    {
+      "answer": 100,
+      "category": "converter",
+      "expected_answer": 100,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "conversion": "f_to_c",
+            "value": 212
+          },
+          "optional": false,
+          "purpose": "convert the value",
+          "step": 1,
+          "tool": "unit_converter"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "B19",
+      "tools_used": [
+        "unit_converter"
+      ],
+      "trace": [
+        {
+          "args": {
+            "conversion": "f_to_c",
+            "value": 212
+          },
+          "event": "observe",
+          "observation": 100,
+          "step": 1,
+          "tool": "unit_converter"
+        }
+      ],
+      "type": "converter"
+    },
+    {
+      "answer": 5,
+      "category": "multi_step",
+      "expected_answer": 5,
+      "expected_success": true,
+      "passed": true,
+      "plan": [
+        {
+          "args": {
+            "text": "plan then execute then check"
+          },
+          "optional": false,
+          "purpose": "count the words in the text",
+          "step": 1,
+          "tool": "word_count"
+        },
+        {
+          "args": {
+            "key": "wc_result",
+            "value": "$prev"
+          },
+          "optional": false,
+          "purpose": "store the word count",
+          "step": 2,
+          "tool": "remember"
+        },
+        {
+          "args": {
+            "key": "wc_result"
+          },
+          "optional": false,
+          "purpose": "recall the stored word count",
+          "step": 3,
+          "tool": "recall"
+        }
+      ],
+      "recovered": false,
+      "recoveries": [],
+      "replans": 0,
+      "steps": 3,
+      "success": true,
+      "task_id": "B20",
+      "tools_used": [
+        "word_count",
+        "remember",
+        "recall"
+      ],
+      "trace": [
+        {
+          "args": {
+            "text": "plan then execute then check"
+          },
+          "event": "observe",
+          "observation": 5,
+          "step": 1,
+          "tool": "word_count"
+        },
+        {
+          "args": {
+            "key": "wc_result",
+            "value": 5
+          },
+          "event": "observe",
+          "observation": 5,
+          "step": 2,
+          "tool": "remember"
+        },
+        {
+          "args": {
+            "key": "wc_result"
+          },
+          "event": "observe",
+          "observation": 5,
+          "step": 3,
+          "tool": "recall"
+        }
+      ],
+      "type": "count_memory"
+    }
+  ],
+  "summary": {
+    "by_category": {
+      "converter": {
+        "passed": 4,
+        "total": 4
+      },
+      "expected_failure": {
+        "passed": 2,
+        "total": 2
+      },
+      "kb_search": {
+        "passed": 2,
+        "total": 2
+      },
+      "memory_persistence": {
+        "passed": 3,
+        "total": 3
+      },
+      "multi_step": {
+        "passed": 4,
+        "total": 4
+      },
+      "recovery": {
+        "passed": 3,
+        "total": 3
+      },
+      "single_tool": {
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "failed_as_expected": 2,
+    "mean_steps": 1.5,
+    "passed": 20,
+    "recovery_counts": {
+      "abort": 2,
+      "fallback_tool": 1,
+      "retry_correct": 1,
+      "skip_step": 1
+    },
+    "replans": 3,
+    "succeeded": 18,
+    "success_rate_expected_success": 1.0,
+    "total": 20
+  }
+}
