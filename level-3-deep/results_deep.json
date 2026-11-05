@@ -1,0 +1,2995 @@
+{
+  "summary": {
+    "correct_drafts": 15,
+    "critique_outcomes": {
+      "flag_then_fix": 13,
+      "flag_then_fix_plan": 1,
+      "flag_unfixable": 4,
+      "pass": 14
+    },
+    "critique_rounds_distribution": {
+      "1": 18,
+      "2": 14
+    },
+    "critique_target_tasks": 14,
+    "expected_success_tasks": 28,
+    "false_critique_rate": 0.0,
+    "false_critiques": 0,
+    "max_critique_rounds": 2,
+    "mean_cost_with_critique": 2.0,
+    "mean_cost_without_critique": 1.3438,
+    "mean_steps_with_critique": 2.0,
+    "mean_steps_without_critique": 1.3438,
+    "outcome_matched": 32,
+    "passed_with_critique": 32,
+    "still_failing_after_critique": [
+      {
+        "reason": "unfixable: calculator: division by zero",
+        "task_id": "D27"
+      },
+      {
+        "reason": "unfixable: recall: no value stored for key 'never_stored_deep'",
+        "task_id": "D28"
+      },
+      {
+        "reason": "unfixable: calculator: division by zero",
+        "task_id": "D29"
+      },
+      {
+        "reason": "unfixable: kb_search: no matching entry for query",
+        "task_id": "D30"
+      }
+    ],
+    "succeeded_with_critique": 28,
+    "succeeded_without_critique": 15,
+    "success_rate_with_critique": 1.0,
+    "success_rate_without_critique": 0.5357,
+    "total": 32,
+    "total_revisions": 14
+  },
+  "with_critique": [
+    {
+      "answer": 60,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 60,
+              "name": "independent_recompute",
+              "observed": 60,
+              "passed": true
+            },
+            {
+              "expected": 60,
+              "name": "answer_match",
+              "observed": 60,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 60,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 60,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D01",
+      "type": "calculator"
+    },
+    {
+      "answer": 3,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 3,
+              "name": "independent_recompute",
+              "observed": 3,
+              "passed": true
+            },
+            {
+              "expected": 3,
+              "name": "answer_match",
+              "observed": 3,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 3,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 3,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D02",
+      "type": "calculator"
+    },
+    {
+      "answer": 5,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "word_count"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "word_count"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 5,
+              "name": "independent_recompute",
+              "observed": 5,
+              "passed": true
+            },
+            {
+              "expected": 5,
+              "name": "answer_match",
+              "observed": 5,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 5,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 5,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D03",
+      "type": "word_count"
+    },
+    {
+      "answer": 6.2137119224,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 6.2137119224,
+              "name": "independent_recompute",
+              "observed": 6.2137119224,
+              "passed": true
+            },
+            {
+              "expected": 6.2137119224,
+              "name": "answer_match",
+              "observed": 6.2137119224,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 6.2137119224,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 6.2137119224,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D04",
+      "type": "converter"
+    },
+    {
+      "answer": 32,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 32,
+              "name": "independent_recompute",
+              "observed": 32,
+              "passed": true
+            },
+            {
+              "expected": 32,
+              "name": "answer_match",
+              "observed": 32,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 32,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 32,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D05",
+      "type": "converter"
+    },
+    {
+      "answer": "memory",
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "kb_search"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "kb_search"
+              ],
+              "passed": true
+            },
+            {
+              "expected": "memory",
+              "name": "independent_recompute",
+              "observed": "memory",
+              "passed": true
+            },
+            {
+              "expected": "memory",
+              "name": "answer_match",
+              "observed": "memory",
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": "memory",
+      "draft_success": true,
+      "error": null,
+      "expected_answer": "memory",
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D06",
+      "type": "kb_search_task"
+    },
+    {
+      "answer": "Planning is choosing the next action based on the task and past observations.",
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "kb_lookup"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "kb_lookup"
+              ],
+              "passed": true
+            },
+            {
+              "expected": "Planning is choosing the next action based on the task and past observations.",
+              "name": "independent_recompute",
+              "observed": "Planning is choosing the next action based on the task and past observations.",
+              "passed": true
+            },
+            {
+              "expected": "Planning is choosing the next action based on the task and past observations.",
+              "name": "answer_match",
+              "observed": "Planning is choosing the next action based on the task and past observations.",
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": "Planning is choosing the next action based on the task and past observations.",
+      "draft_success": true,
+      "error": null,
+      "expected_answer": "Planning is choosing the next action based on the task and past observations.",
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D07",
+      "type": "lookup"
+    },
+    {
+      "answer": 42,
+      "category": "clean",
+      "cost_steps": 3,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator",
+                "remember",
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator",
+                "remember",
+                "recall"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 42,
+              "name": "independent_recompute",
+              "observed": 42,
+              "passed": true
+            },
+            {
+              "expected": 42,
+              "name": "answer_match",
+              "observed": 42,
+              "passed": true
+            },
+            {
+              "expected": 42,
+              "name": "memory_consistency",
+              "observed": 42,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 42,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 42,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 3,
+      "success": true,
+      "task_id": "D08",
+      "type": "multi_step"
+    },
+    {
+      "answer": 8.04672,
+      "category": "clean",
+      "cost_steps": 3,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter",
+                "remember",
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter",
+                "remember",
+                "recall"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 8.04672,
+              "name": "independent_recompute",
+              "observed": 8.04672,
+              "passed": true
+            },
+            {
+              "expected": 8.04672,
+              "name": "answer_match",
+              "observed": 8.04672,
+              "passed": true
+            },
+            {
+              "expected": 8.04672,
+              "name": "memory_consistency",
+              "observed": 8.04672,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 8.04672,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 8.04672,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 3,
+      "success": true,
+      "task_id": "D09",
+      "type": "convert_memory"
+    },
+    {
+      "answer": 4,
+      "category": "clean",
+      "cost_steps": 3,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "word_count",
+                "remember",
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "word_count",
+                "remember",
+                "recall"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 4,
+              "name": "independent_recompute",
+              "observed": 4,
+              "passed": true
+            },
+            {
+              "expected": 4,
+              "name": "answer_match",
+              "observed": 4,
+              "passed": true
+            },
+            {
+              "expected": 4,
+              "name": "memory_consistency",
+              "observed": 4,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 4,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 4,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 3,
+      "success": true,
+      "task_id": "D10",
+      "type": "count_memory"
+    },
+    {
+      "answer": 30,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 30,
+              "name": "independent_recompute",
+              "observed": 30,
+              "passed": true
+            },
+            {
+              "expected": 30,
+              "name": "answer_match",
+              "observed": 30,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 30,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 30,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D11",
+      "type": "calculator"
+    },
+    {
+      "answer": 11.0231131092,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 11.0231131092,
+              "name": "independent_recompute",
+              "observed": 11.0231131092,
+              "passed": true
+            },
+            {
+              "expected": 11.0231131092,
+              "name": "answer_match",
+              "observed": 11.0231131092,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 11.0231131092,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 11.0231131092,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D12",
+      "type": "converter"
+    },
+    {
+      "answer": 40,
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 40,
+              "name": "independent_recompute",
+              "observed": 36,
+              "passed": true
+            },
+            {
+              "expected": 40,
+              "name": "answer_match",
+              "observed": 36,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 40,
+              "name": "independent_recompute",
+              "observed": 40,
+              "passed": true
+            },
+            {
+              "expected": 40,
+              "name": "answer_match",
+              "observed": 40,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 36,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 40,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D13",
+      "type": "calculator"
+    },
+    {
+      "answer": 30,
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 30,
+              "name": "independent_recompute",
+              "observed": 25,
+              "passed": true
+            },
+            {
+              "expected": 30,
+              "name": "answer_match",
+              "observed": 25,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 30,
+              "name": "independent_recompute",
+              "observed": 30,
+              "passed": true
+            },
+            {
+              "expected": 30,
+              "name": "answer_match",
+              "observed": 30,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 25,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 30,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D14",
+      "type": "calculator"
+    },
+    {
+      "answer": 80,
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 80,
+              "name": "independent_recompute",
+              "observed": 81,
+              "passed": true
+            },
+            {
+              "expected": 80,
+              "name": "answer_match",
+              "observed": 81,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 80,
+              "name": "independent_recompute",
+              "observed": 80,
+              "passed": true
+            },
+            {
+              "expected": 80,
+              "name": "answer_match",
+              "observed": 80,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 81,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 80,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D15",
+      "type": "calculator"
+    },
+    {
+      "answer": 6.2137119224,
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 6.2137119224,
+              "name": "independent_recompute",
+              "observed": 16.09344,
+              "passed": true
+            },
+            {
+              "expected": 6.2137119224,
+              "name": "answer_match",
+              "observed": 16.09344,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 6.2137119224,
+              "name": "independent_recompute",
+              "observed": 6.2137119224,
+              "passed": true
+            },
+            {
+              "expected": 6.2137119224,
+              "name": "answer_match",
+              "observed": 6.2137119224,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 16.09344,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 6.2137119224,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D16",
+      "type": "converter"
+    },
+    {
+      "answer": 212,
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 212,
+              "name": "independent_recompute",
+              "observed": 37.7777777778,
+              "passed": true
+            },
+            {
+              "expected": 212,
+              "name": "answer_match",
+              "observed": 37.7777777778,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 212,
+              "name": "independent_recompute",
+              "observed": 212,
+              "passed": true
+            },
+            {
+              "expected": 212,
+              "name": "answer_match",
+              "observed": 212,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 37.7777777778,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 212,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D17",
+      "type": "converter"
+    },
+    {
+      "answer": 22.0462262185,
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 22.0462262185,
+              "name": "independent_recompute",
+              "observed": 4.5359237,
+              "passed": true
+            },
+            {
+              "expected": 22.0462262185,
+              "name": "answer_match",
+              "observed": 4.5359237,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 22.0462262185,
+              "name": "independent_recompute",
+              "observed": 22.0462262185,
+              "passed": true
+            },
+            {
+              "expected": 22.0462262185,
+              "name": "answer_match",
+              "observed": 22.0462262185,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 4.5359237,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 22.0462262185,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D18",
+      "type": "converter"
+    },
+    {
+      "answer": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "kb_lookup"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "kb_lookup"
+              ],
+              "passed": true
+            },
+            {
+              "expected": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+              "name": "independent_recompute",
+              "observed": "A tool is a named function an agent can call with validated arguments.",
+              "passed": true
+            },
+            {
+              "expected": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+              "name": "answer_match",
+              "observed": "A tool is a named function an agent can call with validated arguments.",
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "kb_lookup"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "kb_lookup"
+              ],
+              "passed": true
+            },
+            {
+              "expected": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+              "name": "independent_recompute",
+              "observed": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+              "passed": true
+            },
+            {
+              "expected": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+              "name": "answer_match",
+              "observed": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": "A tool is a named function an agent can call with validated arguments.",
+      "draft_success": true,
+      "error": null,
+      "expected_answer": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D19",
+      "type": "lookup"
+    },
+    {
+      "answer": "Memory is a store an agent uses to save and recall information across steps.",
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "kb_lookup"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "kb_lookup"
+              ],
+              "passed": true
+            },
+            {
+              "expected": "Memory is a store an agent uses to save and recall information across steps.",
+              "name": "independent_recompute",
+              "observed": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+              "passed": true
+            },
+            {
+              "expected": "Memory is a store an agent uses to save and recall information across steps.",
+              "name": "answer_match",
+              "observed": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "kb_lookup"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "kb_lookup"
+              ],
+              "passed": true
+            },
+            {
+              "expected": "Memory is a store an agent uses to save and recall information across steps.",
+              "name": "independent_recompute",
+              "observed": "Memory is a store an agent uses to save and recall information across steps.",
+              "passed": true
+            },
+            {
+              "expected": "Memory is a store an agent uses to save and recall information across steps.",
+              "name": "answer_match",
+              "observed": "Memory is a store an agent uses to save and recall information across steps.",
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+      "draft_success": true,
+      "error": null,
+      "expected_answer": "Memory is a store an agent uses to save and recall information across steps.",
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D20",
+      "type": "lookup"
+    },
+    {
+      "answer": 40,
+      "category": "critique_target",
+      "cost_steps": 6,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator",
+                "remember",
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator",
+                "remember",
+                "recall"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 40,
+              "name": "independent_recompute",
+              "observed": 35,
+              "passed": true
+            },
+            {
+              "expected": 40,
+              "name": "answer_match",
+              "observed": 35,
+              "passed": false
+            },
+            {
+              "expected": 40,
+              "name": "memory_consistency",
+              "observed": 35,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch",
+            "memory_stale_or_wrong"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator",
+                "remember",
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator",
+                "remember",
+                "recall"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 40,
+              "name": "independent_recompute",
+              "observed": 40,
+              "passed": true
+            },
+            {
+              "expected": 40,
+              "name": "answer_match",
+              "observed": 40,
+              "passed": true
+            },
+            {
+              "expected": 40,
+              "name": "memory_consistency",
+              "observed": 40,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 35,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 40,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 6,
+      "success": true,
+      "task_id": "D21",
+      "type": "multi_step"
+    },
+    {
+      "answer": 16.09344,
+      "category": "critique_target",
+      "cost_steps": 6,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter",
+                "remember",
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter",
+                "remember",
+                "recall"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 16.09344,
+              "name": "independent_recompute",
+              "observed": 9,
+              "passed": true
+            },
+            {
+              "expected": 16.09344,
+              "name": "answer_match",
+              "observed": 9,
+              "passed": false
+            },
+            {
+              "expected": 16.09344,
+              "name": "memory_consistency",
+              "observed": 9,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch",
+            "memory_stale_or_wrong"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter",
+                "remember",
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter",
+                "remember",
+                "recall"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 16.09344,
+              "name": "independent_recompute",
+              "observed": 16.09344,
+              "passed": true
+            },
+            {
+              "expected": 16.09344,
+              "name": "answer_match",
+              "observed": 16.09344,
+              "passed": true
+            },
+            {
+              "expected": 16.09344,
+              "name": "memory_consistency",
+              "observed": 16.09344,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 9,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 16.09344,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 6,
+      "success": true,
+      "task_id": "D22",
+      "type": "convert_memory"
+    },
+    {
+      "answer": 7,
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "word_count"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "word_count"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 7,
+              "name": "independent_recompute",
+              "observed": 6,
+              "passed": true
+            },
+            {
+              "expected": 7,
+              "name": "answer_match",
+              "observed": 6,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "word_count"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "word_count"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 7,
+              "name": "independent_recompute",
+              "observed": 7,
+              "passed": true
+            },
+            {
+              "expected": 7,
+              "name": "answer_match",
+              "observed": 7,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 6,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 7,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D23",
+      "type": "word_count"
+    },
+    {
+      "answer": 15,
+      "category": "critique_target",
+      "cost_steps": 4,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator",
+                "remember",
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": false
+            },
+            {
+              "expected": 15,
+              "name": "independent_recompute",
+              "observed": 15,
+              "passed": true
+            },
+            {
+              "expected": 15,
+              "name": "answer_match",
+              "observed": 15,
+              "passed": true
+            },
+            {
+              "expected": 15,
+              "name": "memory_consistency",
+              "observed": null,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "plan_incomplete",
+            "memory_missing"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator",
+                "remember",
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator",
+                "remember",
+                "recall"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 15,
+              "name": "independent_recompute",
+              "observed": 15,
+              "passed": true
+            },
+            {
+              "expected": 15,
+              "name": "answer_match",
+              "observed": 15,
+              "passed": true
+            },
+            {
+              "expected": 15,
+              "name": "memory_consistency",
+              "observed": 15,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix_plan",
+      "critique_rounds": 2,
+      "draft_answer": 15,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 15,
+      "expected_critique_outcome": "flag_then_fix_plan",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 4,
+      "success": true,
+      "task_id": "D24",
+      "type": "multi_step"
+    },
+    {
+      "answer": 26,
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 26,
+              "name": "independent_recompute",
+              "observed": 42,
+              "passed": true
+            },
+            {
+              "expected": 26,
+              "name": "answer_match",
+              "observed": 42,
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 26,
+              "name": "independent_recompute",
+              "observed": 26,
+              "passed": true
+            },
+            {
+              "expected": 26,
+              "name": "answer_match",
+              "observed": 26,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": 42,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 26,
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 2,
+      "success": true,
+      "task_id": "D25",
+      "type": "calculator"
+    },
+    {
+      "answer": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+      "category": "critique_target",
+      "cost_steps": 4,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "kb_search",
+                "kb_lookup"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "kb_search",
+                "kb_lookup"
+              ],
+              "passed": true
+            },
+            {
+              "expected": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+              "name": "independent_recompute",
+              "observed": "A tool is a named function an agent can call with validated arguments.",
+              "passed": true
+            },
+            {
+              "expected": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+              "name": "answer_match",
+              "observed": "A tool is a named function an agent can call with validated arguments.",
+              "passed": false
+            }
+          ],
+          "issues": [
+            "answer_mismatch"
+          ],
+          "passed": false,
+          "revision_followed": true,
+          "round": 1,
+          "unfixable": false
+        },
+        {
+          "checks": [
+            {
+              "expected": [
+                "kb_search",
+                "kb_lookup"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "kb_search",
+                "kb_lookup"
+              ],
+              "passed": true
+            },
+            {
+              "expected": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+              "name": "independent_recompute",
+              "observed": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+              "passed": true
+            },
+            {
+              "expected": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+              "name": "answer_match",
+              "observed": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 2,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "flag_then_fix",
+      "critique_rounds": 2,
+      "draft_answer": "A tool is a named function an agent can call with validated arguments.",
+      "draft_success": true,
+      "error": null,
+      "expected_answer": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+      "expected_critique_outcome": "flag_then_fix",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 1,
+      "steps": 4,
+      "success": true,
+      "task_id": "D26",
+      "type": "search_then_lookup"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": null,
+              "name": "independent_recompute",
+              "observed": "calculator: division by zero",
+              "passed": false
+            }
+          ],
+          "issues": [
+            "unfixable: calculator: division by zero"
+          ],
+          "passed": false,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": true
+        }
+      ],
+      "critique_outcome": "flag_unfixable",
+      "critique_rounds": 1,
+      "draft_answer": null,
+      "draft_success": false,
+      "error": "calculator: division by zero",
+      "expected_answer": null,
+      "expected_critique_outcome": "flag_unfixable",
+      "expected_success": false,
+      "final_result_success": false,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D27",
+      "type": "unrecoverable"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "recall"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "recall"
+              ],
+              "passed": true
+            },
+            {
+              "expected": null,
+              "name": "independent_recompute",
+              "observed": "recall: no value stored for key 'never_stored_deep'",
+              "passed": false
+            }
+          ],
+          "issues": [
+            "unfixable: recall: no value stored for key 'never_stored_deep'"
+          ],
+          "passed": false,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": true
+        }
+      ],
+      "critique_outcome": "flag_unfixable",
+      "critique_rounds": 1,
+      "draft_answer": null,
+      "draft_success": false,
+      "error": "recall: no value stored for key 'never_stored_deep'",
+      "expected_answer": null,
+      "expected_critique_outcome": "flag_unfixable",
+      "expected_success": false,
+      "final_result_success": false,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D28",
+      "type": "recall_persist"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": null,
+              "name": "independent_recompute",
+              "observed": "calculator: division by zero",
+              "passed": false
+            }
+          ],
+          "issues": [
+            "unfixable: calculator: division by zero"
+          ],
+          "passed": false,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": true
+        }
+      ],
+      "critique_outcome": "flag_unfixable",
+      "critique_rounds": 1,
+      "draft_answer": null,
+      "draft_success": false,
+      "error": "calculator: division by zero",
+      "expected_answer": null,
+      "expected_critique_outcome": "flag_unfixable",
+      "expected_success": false,
+      "final_result_success": false,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D29",
+      "type": "unrecoverable"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "kb_search"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "kb_search"
+              ],
+              "passed": true
+            },
+            {
+              "expected": null,
+              "name": "independent_recompute",
+              "observed": "kb_search: no matching entry for query",
+              "passed": false
+            }
+          ],
+          "issues": [
+            "unfixable: kb_search: no matching entry for query"
+          ],
+          "passed": false,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": true
+        }
+      ],
+      "critique_outcome": "flag_unfixable",
+      "critique_rounds": 1,
+      "draft_answer": null,
+      "draft_success": false,
+      "error": "kb_search: no matching entry for query",
+      "expected_answer": null,
+      "expected_critique_outcome": "flag_unfixable",
+      "expected_success": false,
+      "final_result_success": false,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D30",
+      "type": "kb_search_task"
+    },
+    {
+      "answer": 12,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "calculator"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "calculator"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 12,
+              "name": "independent_recompute",
+              "observed": 12,
+              "passed": true
+            },
+            {
+              "expected": 12,
+              "name": "answer_match",
+              "observed": 12,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 12,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 12,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D31",
+      "type": "calculator"
+    },
+    {
+      "answer": 0,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [
+        {
+          "checks": [
+            {
+              "expected": [
+                "unit_converter"
+              ],
+              "name": "plan_completeness",
+              "observed": [
+                "unit_converter"
+              ],
+              "passed": true
+            },
+            {
+              "expected": 0,
+              "name": "independent_recompute",
+              "observed": 0,
+              "passed": true
+            },
+            {
+              "expected": 0,
+              "name": "answer_match",
+              "observed": 0,
+              "passed": true
+            }
+          ],
+          "issues": [],
+          "passed": true,
+          "revision_followed": false,
+          "round": 1,
+          "unfixable": false
+        }
+      ],
+      "critique_outcome": "pass",
+      "critique_rounds": 1,
+      "draft_answer": 0,
+      "draft_success": true,
+      "error": null,
+      "expected_answer": 0,
+      "expected_critique_outcome": "pass",
+      "expected_success": true,
+      "final_result_success": true,
+      "mode": "with_critique",
+      "outcome_matched": true,
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D32",
+      "type": "converter"
+    }
+  ],
+  "without_critique": [
+    {
+      "answer": 60,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 60,
+      "draft_success": true,
+      "expected_answer": 60,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D01",
+      "type": "calculator"
+    },
+    {
+      "answer": 3,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 3,
+      "draft_success": true,
+      "expected_answer": 3,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D02",
+      "type": "calculator"
+    },
+    {
+      "answer": 5,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 5,
+      "draft_success": true,
+      "expected_answer": 5,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D03",
+      "type": "word_count"
+    },
+    {
+      "answer": 6.2137119224,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 6.2137119224,
+      "draft_success": true,
+      "expected_answer": 6.2137119224,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D04",
+      "type": "converter"
+    },
+    {
+      "answer": 32,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 32,
+      "draft_success": true,
+      "expected_answer": 32,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D05",
+      "type": "converter"
+    },
+    {
+      "answer": "memory",
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": "memory",
+      "draft_success": true,
+      "expected_answer": "memory",
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D06",
+      "type": "kb_search_task"
+    },
+    {
+      "answer": "Planning is choosing the next action based on the task and past observations.",
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": "Planning is choosing the next action based on the task and past observations.",
+      "draft_success": true,
+      "expected_answer": "Planning is choosing the next action based on the task and past observations.",
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D07",
+      "type": "lookup"
+    },
+    {
+      "answer": 42,
+      "category": "clean",
+      "cost_steps": 3,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 42,
+      "draft_success": true,
+      "expected_answer": 42,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 3,
+      "success": true,
+      "task_id": "D08",
+      "type": "multi_step"
+    },
+    {
+      "answer": 8.04672,
+      "category": "clean",
+      "cost_steps": 3,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 8.04672,
+      "draft_success": true,
+      "expected_answer": 8.04672,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 3,
+      "success": true,
+      "task_id": "D09",
+      "type": "convert_memory"
+    },
+    {
+      "answer": 4,
+      "category": "clean",
+      "cost_steps": 3,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 4,
+      "draft_success": true,
+      "expected_answer": 4,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 3,
+      "success": true,
+      "task_id": "D10",
+      "type": "count_memory"
+    },
+    {
+      "answer": 30,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 30,
+      "draft_success": true,
+      "expected_answer": 30,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D11",
+      "type": "calculator"
+    },
+    {
+      "answer": 11.0231131092,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 11.0231131092,
+      "draft_success": true,
+      "expected_answer": 11.0231131092,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D12",
+      "type": "converter"
+    },
+    {
+      "answer": 36,
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 36,
+      "draft_success": true,
+      "expected_answer": 40,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D13",
+      "type": "calculator"
+    },
+    {
+      "answer": 25,
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 25,
+      "draft_success": true,
+      "expected_answer": 30,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D14",
+      "type": "calculator"
+    },
+    {
+      "answer": 81,
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 81,
+      "draft_success": true,
+      "expected_answer": 80,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D15",
+      "type": "calculator"
+    },
+    {
+      "answer": 16.09344,
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 16.09344,
+      "draft_success": true,
+      "expected_answer": 6.2137119224,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D16",
+      "type": "converter"
+    },
+    {
+      "answer": 37.7777777778,
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 37.7777777778,
+      "draft_success": true,
+      "expected_answer": 212,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D17",
+      "type": "converter"
+    },
+    {
+      "answer": 4.5359237,
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 4.5359237,
+      "draft_success": true,
+      "expected_answer": 22.0462262185,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D18",
+      "type": "converter"
+    },
+    {
+      "answer": "A tool is a named function an agent can call with validated arguments.",
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": "A tool is a named function an agent can call with validated arguments.",
+      "draft_success": true,
+      "expected_answer": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D19",
+      "type": "lookup"
+    },
+    {
+      "answer": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+      "draft_success": true,
+      "expected_answer": "Memory is a store an agent uses to save and recall information across steps.",
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D20",
+      "type": "lookup"
+    },
+    {
+      "answer": 35,
+      "category": "critique_target",
+      "cost_steps": 3,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 35,
+      "draft_success": true,
+      "expected_answer": 40,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 3,
+      "success": false,
+      "task_id": "D21",
+      "type": "multi_step"
+    },
+    {
+      "answer": 9,
+      "category": "critique_target",
+      "cost_steps": 3,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 9,
+      "draft_success": true,
+      "expected_answer": 16.09344,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 3,
+      "success": false,
+      "task_id": "D22",
+      "type": "convert_memory"
+    },
+    {
+      "answer": 6,
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 6,
+      "draft_success": true,
+      "expected_answer": 7,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D23",
+      "type": "word_count"
+    },
+    {
+      "answer": 15,
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 15,
+      "draft_success": true,
+      "expected_answer": 15,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D24",
+      "type": "multi_step"
+    },
+    {
+      "answer": 42,
+      "category": "critique_target",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 42,
+      "draft_success": true,
+      "expected_answer": 26,
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D25",
+      "type": "calculator"
+    },
+    {
+      "answer": "A tool is a named function an agent can call with validated arguments.",
+      "category": "critique_target",
+      "cost_steps": 2,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": "A tool is a named function an agent can call with validated arguments.",
+      "draft_success": true,
+      "expected_answer": "A loop repeats plan, act, and observe until the task is done or a limit is reached.",
+      "expected_success": true,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 2,
+      "success": false,
+      "task_id": "D26",
+      "type": "search_then_lookup"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": null,
+      "draft_success": false,
+      "expected_answer": null,
+      "expected_success": false,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D27",
+      "type": "unrecoverable"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": null,
+      "draft_success": false,
+      "expected_answer": null,
+      "expected_success": false,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D28",
+      "type": "recall_persist"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": null,
+      "draft_success": false,
+      "expected_answer": null,
+      "expected_success": false,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D29",
+      "type": "unrecoverable"
+    },
+    {
+      "answer": null,
+      "category": "expected_failure",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": null,
+      "draft_success": false,
+      "expected_answer": null,
+      "expected_success": false,
+      "expected_without_critique_success": false,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": false,
+      "task_id": "D30",
+      "type": "kb_search_task"
+    },
+    {
+      "answer": 12,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 12,
+      "draft_success": true,
+      "expected_answer": 12,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D31",
+      "type": "calculator"
+    },
+    {
+      "answer": 0,
+      "category": "clean",
+      "cost_steps": 1,
+      "critique_log": [],
+      "critique_outcome": "not_run",
+      "critique_rounds": 0,
+      "draft_answer": 0,
+      "draft_success": true,
+      "expected_answer": 0,
+      "expected_success": true,
+      "expected_without_critique_success": true,
+      "mode": "without_critique",
+      "passed": true,
+      "revisions": 0,
+      "steps": 1,
+      "success": true,
+      "task_id": "D32",
+      "type": "converter"
+    }
+  ]
+}
