@@ -1,0 +1,13 @@
+# Lint scope for this repo (Actions polish pack, 2026-11-05).
+# E: pycodestyle errors, F: pyflakes, I: import order.
+# Level folders and tests load sibling modules by path: each file inserts
+# its folder into sys.path before importing, so those imports carry
+# "# noqa: E402" markers, which are live under this selection.
+# Line length is 120. Ruff fixes in the polish pack were style only:
+# import order and format in three test files, and one over-length
+# expected-answer string in tests/test_deep_agent.py split into two
+# concatenated literals with the exact same value. No imported name,
+# string value, or behaviour changed.
+line-length = 120
+[lint]
+select = ["E", "F", "I"]
