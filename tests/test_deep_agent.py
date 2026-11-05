@@ -11,8 +11,13 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "level-3-deep"))
 from agent_deep import (  # noqa: E402
-    MAX_CRITIQUE_ROUNDS, Critic, DeepAgent, independent_expected, run_draft,
+    MAX_CRITIQUE_ROUNDS,
+    Critic,
+    DeepAgent,
+    independent_expected,
+    run_draft,
 )
+
 sys.path.insert(0, os.path.join(ROOT, "level-2-build"))
 from agent_build import Agent as BuildAgent  # noqa: E402
 
@@ -80,7 +85,8 @@ class TestCriticRules(unittest.TestCase):
     def test_critic_flags_wrong_kb_entry(self):
         task = _task(type="lookup", key="agent", draft_error="kb_wrong",
                      draft_wrong_key="tool",
-                     expected_answer="An agent is a system that perceives, plans, and acts using tools to complete a task.")
+                     expected_answer="An agent is a system that perceives, plans, and acts using tools "
+                                     "to complete a task.")
         agent = DeepAgent()
         draft = run_draft(task, agent.build_agent)
         verdict = self.critic.verify(task, draft, {})
