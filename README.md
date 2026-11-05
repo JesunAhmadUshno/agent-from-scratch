@@ -2,8 +2,8 @@
 
 A tool-using agent loop built with no framework: prompt, tool call, observe, repeat.
 
-Status: SCAFFOLD (Wave 0, ROADMAP-V3-BATCH, 2026-11-04). Scaffold is not built. No results exist yet.
-Project: P07. Fleet node: BlackBoxV2. Wave: Wave 3.
+Status: Learn DONE (2026-11-05, ROADMAP-V3-BATCH). Level 1 is built, tested, and measured below. Build and Deep are not started.
+Project: P07. Fleet node: BlackBoxV2. Wave: Wave 3. Learn was run on the Muse VM (CPU); see the level README for the named deduction.
 
 ## Start here
 
@@ -20,9 +20,15 @@ Project: P07. Fleet node: BlackBoxV2. Wave: Wave 3.
 
 ## Benchmarks
 
+Measured 2026-11-05 with level-1-learn/run_learn.py on the Muse VM, Python 3.12. The planner is a deterministic policy, not an LLM.
+
 | Test | Result |
 | --- | --- |
-| NO RESULTS YET | No measurement has run. This table fills only with measured numbers, with method. |
+| Learn tasks matched expectations | 8 of 8 |
+| Tasks succeeded | 7 of 8 (T08 fails by design, division by zero) |
+| Tasks recovered after a bad argument | 1 (T07, corrected to 9 * 9 = 81) |
+| Unit tests | 16 passed |
+| Determinism | results_learn.json identical across two runs (hash verified) |
 
 ## Novelty
 
