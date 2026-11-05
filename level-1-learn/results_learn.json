@@ -1,0 +1,264 @@
+{
+  "results": [
+    {
+      "answer": 84,
+      "expected_answer": 84,
+      "expected_success": true,
+      "passed": true,
+      "recovered": false,
+      "steps": 1,
+      "success": true,
+      "task_id": "T01",
+      "tools_used": [
+        "calculator"
+      ],
+      "trace": [
+        {
+          "args": {
+            "expression": "12 * (3 + 4)"
+          },
+          "event": "observe",
+          "observation": 84,
+          "step": 1,
+          "tool": "calculator"
+        }
+      ],
+      "type": "calculator"
+    },
+    {
+      "answer": 25,
+      "expected_answer": 25,
+      "expected_success": true,
+      "passed": true,
+      "recovered": false,
+      "steps": 1,
+      "success": true,
+      "task_id": "T02",
+      "tools_used": [
+        "calculator"
+      ],
+      "trace": [
+        {
+          "args": {
+            "expression": "15 / 3 + 2 * 10"
+          },
+          "event": "observe",
+          "observation": 25,
+          "step": 1,
+          "tool": "calculator"
+        }
+      ],
+      "type": "calculator"
+    },
+    {
+      "answer": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+      "expected_answer": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+      "expected_success": true,
+      "passed": true,
+      "recovered": false,
+      "steps": 1,
+      "success": true,
+      "task_id": "T03",
+      "tools_used": [
+        "kb_lookup"
+      ],
+      "trace": [
+        {
+          "args": {
+            "key": "agent"
+          },
+          "event": "observe",
+          "observation": "An agent is a system that perceives, plans, and acts using tools to complete a task.",
+          "step": 1,
+          "tool": "kb_lookup"
+        }
+      ],
+      "type": "lookup"
+    },
+    {
+      "answer": 6,
+      "expected_answer": 6,
+      "expected_success": true,
+      "passed": true,
+      "recovered": false,
+      "steps": 1,
+      "success": true,
+      "task_id": "T04",
+      "tools_used": [
+        "word_count"
+      ],
+      "trace": [
+        {
+          "args": {
+            "text": "the agent uses tools to act"
+          },
+          "event": "observe",
+          "observation": 6,
+          "step": 1,
+          "tool": "word_count"
+        }
+      ],
+      "type": "word_count"
+    },
+    {
+      "answer": "agent-from-scratch",
+      "expected_answer": "agent-from-scratch",
+      "expected_success": true,
+      "passed": true,
+      "recovered": false,
+      "steps": 2,
+      "success": true,
+      "task_id": "T05",
+      "tools_used": [
+        "remember",
+        "recall"
+      ],
+      "trace": [
+        {
+          "args": {
+            "key": "project",
+            "value": "agent-from-scratch"
+          },
+          "event": "observe",
+          "observation": "agent-from-scratch",
+          "step": 1,
+          "tool": "remember"
+        },
+        {
+          "args": {
+            "key": "project"
+          },
+          "event": "observe",
+          "observation": "agent-from-scratch",
+          "step": 2,
+          "tool": "recall"
+        }
+      ],
+      "type": "memory"
+    },
+    {
+      "answer": 42,
+      "expected_answer": 42,
+      "expected_success": true,
+      "passed": true,
+      "recovered": false,
+      "steps": 3,
+      "success": true,
+      "task_id": "T06",
+      "tools_used": [
+        "calculator",
+        "remember",
+        "recall"
+      ],
+      "trace": [
+        {
+          "args": {
+            "expression": "6 * 7"
+          },
+          "event": "observe",
+          "observation": 42,
+          "step": 1,
+          "tool": "calculator"
+        },
+        {
+          "args": {
+            "key": "calc_result",
+            "value": 42
+          },
+          "event": "observe",
+          "observation": 42,
+          "step": 2,
+          "tool": "remember"
+        },
+        {
+          "args": {
+            "key": "calc_result"
+          },
+          "event": "observe",
+          "observation": 42,
+          "step": 3,
+          "tool": "recall"
+        }
+      ],
+      "type": "multi_step"
+    },
+    {
+      "answer": 81,
+      "expected_answer": 81,
+      "expected_success": true,
+      "passed": true,
+      "recovered": true,
+      "steps": 2,
+      "success": true,
+      "task_id": "T07",
+      "tools_used": [
+        "calculator",
+        "calculator"
+      ],
+      "trace": [
+        {
+          "args": {
+            "expression": 123
+          },
+          "error": "calculator: 'expression' must be a non-empty string",
+          "event": "error",
+          "step": 1,
+          "tool": "calculator"
+        },
+        {
+          "args": {
+            "expression": "9 * 9"
+          },
+          "event": "retry_success",
+          "observation": 81,
+          "step": 2,
+          "tool": "calculator"
+        }
+      ],
+      "type": "recovery"
+    },
+    {
+      "answer": null,
+      "error": "calculator: division by zero",
+      "expected_answer": null,
+      "expected_success": false,
+      "passed": true,
+      "recovered": false,
+      "steps": 2,
+      "success": false,
+      "task_id": "T08",
+      "tools_used": [
+        "calculator",
+        "calculator"
+      ],
+      "trace": [
+        {
+          "args": {
+            "expression": "10 / 0"
+          },
+          "error": "calculator: division by zero",
+          "event": "error",
+          "step": 1,
+          "tool": "calculator"
+        },
+        {
+          "args": {
+            "expression": "10 / 0"
+          },
+          "error": "calculator: division by zero",
+          "event": "error",
+          "step": 2,
+          "tool": "calculator"
+        }
+      ],
+      "type": "unrecoverable"
+    }
+  ],
+  "summary": {
+    "failed_as_expected": 1,
+    "passed": 8,
+    "recovered": 1,
+    "succeeded": 7,
+    "total": 8
+  }
+}
