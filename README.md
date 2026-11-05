@@ -2,7 +2,7 @@
 
 A tool-using agent loop built with no framework: prompt, tool call, observe, repeat.
 
-Status: Learn DONE (2026-11-05, ROADMAP-V3-BATCH). Level 1 is built, tested, and measured below. Build and Deep are not started.
+Status: Learn DONE and Build DONE (2026-11-05, ROADMAP-V3-BATCH). Level 2 is built, tested, and measured below: 20 of 20 Build tasks matched expectations, success rate 1.0 on expected-success tasks, mean 1.5 steps, recoveries retry_correct 1, fallback_tool 1, skip_step 1, abort 2. Deep is not started.
 Project: P07. Fleet node: BlackBoxV2. Wave: Wave 3. Learn was run on the Muse VM (CPU); see the level README for the named deduction.
 
 ## Start here
@@ -29,6 +29,12 @@ Measured 2026-11-05 with level-1-learn/run_learn.py on the Muse VM, Python 3.12.
 | Tasks recovered after a bad argument | 1 (T07, corrected to 9 * 9 = 81) |
 | Unit tests | 16 passed |
 | Determinism | results_learn.json identical across two runs (hash verified) |
+| Build tasks matched expectations | 20 of 20 |
+| Build success rate on expected-success tasks | 1.0 (18 of 18) |
+| Build mean steps | 1.5 |
+| Build recoveries | retry_correct 1, fallback_tool 1, skip_step 1, abort 2 |
+| Full test suite at Build ship | 35 passed (16 Learn plus 19 Build) |
+| Determinism (Build) | results_build.json identical across two runs (diff verified) |
 
 ## Novelty
 
