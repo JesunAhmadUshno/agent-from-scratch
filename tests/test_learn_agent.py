@@ -5,7 +5,7 @@ import unittest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "level-1-learn"))
-from agent import Agent, ToolError, call_tool, KB  # noqa: E402
+from agent import KB, Agent, ToolError, call_tool  # noqa: E402
 
 
 class TestCalculator(unittest.TestCase):
