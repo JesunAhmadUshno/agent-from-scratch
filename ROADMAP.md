@@ -16,6 +16,11 @@
 Named here under the December Compression Protocol. None of this
 is built, and nothing below is claimed as done.
 
+Update after v1.0: items 3, 4 and 7 are now measured by
+level-3-deep/analyze_deep.py, and item 5 has wall-clock timing
+(the knowledge base is still five entries). See
+docs/research-review.md for the status of each item.
+
 1. Natural error study: run the agent on tasks not written by
    the agent author, collect errors that occur without seeding,
    and measure the critic on those.

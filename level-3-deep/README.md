@@ -96,6 +96,40 @@ Hand checks: 12 * 3 + 4 = 40 (the draft slip computes 12 * 3 =
 Celsius is 212 degrees Fahrenheit; the inverted draft computes
 37.7777777778. 8 * 5 = 40, not the stale stored 35.
 
+## Extra analyses (analyze_deep.py)
+
+    python level-3-deep/analyze_deep.py
+
+Runs on CPU in seconds and never rewrites results_deep.json.
+
+- Critique-round ablation, results_deep_rounds.json: with max
+  critique rounds 0 or 1, 15 of 28 expected-success tasks succeed;
+  with 2 or 3, 28 of 28. One round flags the seeded drafts but
+  leaves no recheck to accept a revision, so the whole gain comes
+  from the second round, and a third adds nothing on this suite.
+- Targeted versus clean revision: running only the plan steps a
+  draft skipped saves 1 of 64 total tool steps (the plan-incomplete
+  task) with the same 28 of 28 solved. Every other seeded slip sits
+  in the step that produces the answer.
+- Interval statistics, results_deep_stats.json: Wilson 95%
+  intervals 0.3581 to 0.7047 without critique and 0.8794 to 1.0
+  with it; exact two-sided McNemar p = 0.000244 on 13 fixed versus
+  0 broken pairs. Caveat: the 13 fixed tasks carry errors seeded on
+  purpose, so the significance holds for this seeded suite only and
+  says nothing about errors that occur without seeding.
+- Cross-task memory, tasks_deep_cross.json and
+  results_deep_cross.json: six tasks with memory shared across the
+  run. Without critique a stale value leaks from X03 through X04
+  into X05 (4 of 6 solved); with critique 6 of 6.
+- Wall-clock timing, timing_deep.json: per-task medians over 200
+  runs, kept outside the deterministic results files because time
+  varies by machine.
+
+The site in site/ re-runs all of this in the browser with a
+JavaScript port and its build fails unless the port reproduces
+every recorded row. That is a cross-implementation check, not an
+independent critic.
+
 ## Failure modes and limits
 
 - The seeded draft errors are designed, not observed in the

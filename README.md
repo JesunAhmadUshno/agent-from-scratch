@@ -2,6 +2,8 @@
 
 A tool-using agent loop built with no framework: prompt, tool call, observe, repeat.
 
+Live dashboard: https://jesunahmadushno.github.io/agent-from-scratch/ (every number is read from the results files at build time; the playground re-runs the agent in your browser).
+
 Status: Learn DONE (grade 8,500 of 10,000), Build DONE (grade 8,500 of 10,000), and Deep DONE (grade 7,900 of 10,000) (2026-11-05, ROADMAP-V3-BATCH). Level 3 compressed Deep is built, tested, and measured below: on a 32-task scored suite, success on expected-success tasks rises from 0.5357 without critique (15 of 28) to 1.000 with critique (28 of 28), with critique outcomes matched on 32 of 32, a false-critique rate of 0.0, mean steps 1.3438 without critique and 2.0 with critique, and 4 unfixable tasks still failing by design. The planner and the critic are deterministic code, not LLMs. Release v1.0.
 Project: P07. Fleet node: BlackBoxV2. Wave: Wave 3. All levels were run on the Muse VM (CPU); see the level READMEs for the named deduction.
 
@@ -46,6 +48,11 @@ Measured 2026-11-05 with level-1-learn/run_learn.py on the Muse VM, Python 3.12.
 | Deep grade | 7,900 of 10,000 (deductions in the Deep README) |
 
 The rest of the v2 Deep scope is the v1.1 backlog in ROADMAP.md.
+Since v1.0, level-3-deep/analyze_deep.py adds the critique-round
+ablation, targeted revision, interval statistics, a cross-task
+memory suite and timing (see the Deep README), and
+docs/research-review.md grades the project against a research
+rubric and names what each remaining gap needs.
 
 ## Novelty
 
