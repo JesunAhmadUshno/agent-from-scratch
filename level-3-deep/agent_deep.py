@@ -29,6 +29,7 @@ BuildAgent = _build.Agent
 call_tool = _build.call_tool
 
 MAX_CRITIQUE_ROUNDS = 2
+_WRITES_MEMORY = ("multi_step", "convert_memory", "count_memory", "memory_write")
 
 
 def independent_expected(task, memory_snapshot):
@@ -216,23 +217,61 @@ def run_draft(task, agent):
 class DeepAgent:
     """Build agent plus draft policy, critic, and bounded revision."""
 
-    def __init__(self, memory_path=None):
+    def __init__(self, memory_path=None, max_rounds=MAX_CRITIQUE_ROUNDS,
+                 revision="clean", isolate=True):
+        # The defaults reproduce results_deep.json. The other settings
+        # exist for the ablation and variant runs in analyze_deep.py:
+        # max_rounds bounds the critique loop (0 means no critique),
+        # revision "targeted" runs only the missing plan steps when the
+        # plan check is the only reason a draft with a correct answer
+        # failed, and isolate False keeps memory across tasks.
+        if revision not in ("clean", "targeted"):
+            raise ToolError("revision must be 'clean' or 'targeted'")
         self.build_agent = BuildAgent(memory_path=memory_path, max_steps=20)
         self.critic = Critic()
+        self.max_rounds = max_rounds
+        self.revision = revision
+        self.isolate = isolate
 
-    def _reset_and_seed(self, task):
+    def _reset_and_seed(self, task, revising=False):
         mem = self.build_agent.memory
-        for k in list(mem.keys()):
+        if self.isolate:
+            stale = list(mem.keys())
+        elif revising and task.get("type") in _WRITES_MEMORY:
+            # Shared memory: drop only the value this task writes, so
+            # what earlier tasks stored survives the revision.
+            stale = [k for k in (task.get("memory_key"),) if k in mem]
+        else:
+            stale = []
+        for k in stale:
             del mem[k]
         mem.save()
         for k, v in task.get("seed_memory", {}).items():
             mem[k] = v
 
+    def _targeted_fix(self, task, draft):
+        """Run only the plan steps the draft skipped, from its answer."""
+        full = _draft_plan(task)
+        last = draft["answer"]
+        steps = 0
+        tools = []
+        try:
+            for s in full[len(draft["plan"]):]:
+                steps += 1
+                tools.append(s["tool"])
+                last = call_tool(s["tool"], _build._resolve(s["args"], last),
+                                 self.build_agent.memory)
+        except ToolError as exc:
+            return dict(draft, plan=full, success=False, answer=None,
+                        steps=steps, tools_used=tools, error=str(exc))
+        return dict(draft, plan=full, success=True, answer=last,
+                    steps=steps, tools_used=tools)
+
     def run_task(self, task, use_critique=True):
         self._reset_and_seed(task)
         draft = run_draft(task, self.build_agent)
         draft_steps = draft["steps"]
-        if not use_critique:
+        if not use_critique or self.max_rounds < 1:
             # success is the actual task outcome, not a match to the
             # label: an expected-failure task has success False.
             success = bool(draft["success"]) and draft["answer"] == task.get("expected_answer")
@@ -252,7 +291,7 @@ class DeepAgent:
         revisions = 0
         total_steps = draft_steps
         outcome = "pass"
-        for round_no in range(1, MAX_CRITIQUE_ROUNDS + 1):
+        for round_no in range(1, self.max_rounds + 1):
             verdict = self.critic.verify(task, current, dict(self.build_agent.memory))
             entry = {"round": round_no, "passed": verdict["passed"],
                      "unfixable": verdict["unfixable"],
@@ -270,14 +309,19 @@ class DeepAgent:
                 outcome = ("flag_then_fix_plan"
                            if "plan_incomplete" in verdict["issues"]
                            else "flag_then_fix")
-            if round_no >= MAX_CRITIQUE_ROUNDS:
+            if round_no >= self.max_rounds:
                 outcome = "flag_still_failing"
                 break
-            # Revision: clean re-run with no seeded draft error. The
-            # memory is reset and re-seeded first, so a stale value
-            # cannot survive into the revision.
-            self._reset_and_seed(task)
-            current = self.build_agent.run_task(task)
+            # Revision (default): clean re-run with no seeded draft
+            # error. The memory is reset and re-seeded first, so a stale
+            # value cannot survive into the revision.
+            if (self.revision == "targeted" and current["success"]
+                    and "answer_mismatch" not in verdict["issues"]
+                    and "plan_incomplete" in verdict["issues"]):
+                current = self._targeted_fix(task, current)
+            else:
+                self._reset_and_seed(task, revising=True)
+                current = self.build_agent.run_task(task)
             revisions += 1
             total_steps += current["steps"]
             entry["revision_followed"] = True
