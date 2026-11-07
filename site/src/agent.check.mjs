@@ -7,6 +7,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { callTool, runLearnSuite, runBuildSuite, runDeepSuite, runDeepMode, summarizeDeep } from './agent.js';
 import { wilson, mcnemarExact } from './stats.js';
+import { parseGrade, parseRecorded, parseBacklog, parseCi, countTests } from './docs.js';
 
 const read = (p) => JSON.parse(fs.readFileSync(new URL(`../../${p}`, import.meta.url), 'utf8'));
 const round4 = (x) => Number(x.toFixed(4));
@@ -53,6 +54,19 @@ const wo = Object.fromEntries(deep.without_critique.map((r) => [r.task_id, r.suc
 const exp = deep.with_critique.filter((r) => r.expected_success);
 assert.equal(exp.filter((r) => r.success && !wo[r.task_id]).length, st.mcnemar.fixed_by_critique);
 assert.equal(exp.filter((r) => !r.success && wo[r.task_id]).length, st.mcnemar.broken_by_critique);
+
+// Text the page quotes from the repo's docs.
+const text = (p) => fs.readFileSync(new URL(`../../${p}`, import.meta.url), 'utf8');
+const g = parseGrade(text('level-3-deep/README.md'));
+assert.equal(g.deductions.length, 7);
+assert.equal(g.deductions.reduce((a, d) => a + d.points, 0), g.total);
+assert.equal(g.outOf - g.total, g.grade);
+assert.deepStrictEqual(parseRecorded(text('level-3-deep/README.md')), { date: '2026-11-05', python: '3.12' });
+assert.equal(parseBacklog(text('ROADMAP.md')).length, 7);
+const ci = parseCi(text('.github/workflows/ci.yml'));
+assert.ok(ci.versions.length >= 2 && ci.steps.some((s) => s.run.includes('python level-3-deep/run_deep.py')));
+const testSrc = fs.readdirSync(new URL('../../tests/', import.meta.url)).filter((f) => /^test_.*\.py$/.test(f)).map((f) => text(`tests/${f}`));
+assert.ok(countTests(testSrc) >= 52, 'the v1.0 suite had 52 tests');
 
 console.log('agent ok', { learn: 8, build: 20, deep: tasks.length, cross: crossTasks.length,
   rounds: Object.fromEntries(Object.entries(ablation.rounds).map(([k, v]) => [k, v.success_rate])), mcnemar_p: st.mcnemar.p_exact_two_sided });
