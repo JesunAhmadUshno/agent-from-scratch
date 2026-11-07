@@ -18,12 +18,12 @@ sys.path.insert(0, HERE)
 from agent_deep import DeepAgent  # noqa: E402
 
 
-def _run_mode(tasks, use_critique):
+def _run_mode(tasks, use_critique, **agent_options):
     fd, mem_path = tempfile.mkstemp(prefix="p07-deep-memory-", suffix=".json")
     os.close(fd)
     os.unlink(mem_path)
     try:
-        agent = DeepAgent(memory_path=mem_path)
+        agent = DeepAgent(memory_path=mem_path, **agent_options)
         return [agent.run_task(t, use_critique=use_critique) for t in tasks]
     finally:
         if os.path.exists(mem_path):
