@@ -1,0 +1,33 @@
+{
+  "caveat": "The 13 fixed tasks carry errors seeded on purpose, so the test shows the critic catches these seeded kinds on this suite. It says nothing about errors that occur without seeding.",
+  "false_critique": {
+    "k": 0,
+    "n": 15,
+    "wilson95": [
+      0.0,
+      0.2039
+    ]
+  },
+  "mcnemar": {
+    "broken_by_critique": 0,
+    "fixed_by_critique": 13,
+    "p_exact_two_sided": 0.000244140625
+  },
+  "n": 28,
+  "with": {
+    "k": 28,
+    "rate": 1.0,
+    "wilson95": [
+      0.8794,
+      1.0
+    ]
+  },
+  "without": {
+    "k": 15,
+    "rate": 0.5357,
+    "wilson95": [
+      0.3581,
+      0.7047
+    ]
+  }
+}

@@ -34,3 +34,8 @@ jobs:
         run: python -m unittest tests.test_deep_agent -v
       - name: Deep runner
         run: python level-3-deep/run_deep.py
+      - name: Deep extra analyses (ablation, intervals, cross-task)
+        run: |
+          python -m unittest tests.test_deep_extras -v
+          python level-3-deep/analyze_deep.py --no-timing
+          git diff --exit-code level-1-learn/results_learn.json level-2-build/results_build.json level-3-deep/results_deep*.json

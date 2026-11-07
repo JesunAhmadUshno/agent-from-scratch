@@ -1,0 +1,86 @@
+{
+  "revision": {
+    "clean": {
+      "expected_success_tasks": 28,
+      "mean_steps": 2.0,
+      "outcomes": {
+        "flag_then_fix": 13,
+        "flag_then_fix_plan": 1,
+        "flag_unfixable": 4,
+        "pass": 14
+      },
+      "revisions": 14,
+      "succeeded": 28,
+      "success_rate": 1.0,
+      "total_steps": 64
+    },
+    "targeted": {
+      "expected_success_tasks": 28,
+      "mean_steps": 1.9688,
+      "outcomes": {
+        "flag_then_fix": 13,
+        "flag_then_fix_plan": 1,
+        "flag_unfixable": 4,
+        "pass": 14
+      },
+      "revisions": 14,
+      "succeeded": 28,
+      "success_rate": 1.0,
+      "total_steps": 63
+    }
+  },
+  "rounds": {
+    "0": {
+      "expected_success_tasks": 28,
+      "mean_steps": 1.3438,
+      "outcomes": {
+        "not_run": 32
+      },
+      "revisions": 0,
+      "succeeded": 15,
+      "success_rate": 0.5357,
+      "total_steps": 43
+    },
+    "1": {
+      "expected_success_tasks": 28,
+      "mean_steps": 1.3438,
+      "outcomes": {
+        "flag_still_failing": 14,
+        "flag_unfixable": 4,
+        "pass": 14
+      },
+      "revisions": 0,
+      "succeeded": 15,
+      "success_rate": 0.5357,
+      "total_steps": 43
+    },
+    "2": {
+      "expected_success_tasks": 28,
+      "mean_steps": 2.0,
+      "outcomes": {
+        "flag_then_fix": 13,
+        "flag_then_fix_plan": 1,
+        "flag_unfixable": 4,
+        "pass": 14
+      },
+      "revisions": 14,
+      "succeeded": 28,
+      "success_rate": 1.0,
+      "total_steps": 64
+    },
+    "3": {
+      "expected_success_tasks": 28,
+      "mean_steps": 2.0,
+      "outcomes": {
+        "flag_then_fix": 13,
+        "flag_then_fix_plan": 1,
+        "flag_unfixable": 4,
+        "pass": 14
+      },
+      "revisions": 14,
+      "succeeded": 28,
+      "success_rate": 1.0,
+      "total_steps": 64
+    }
+  }
+}
