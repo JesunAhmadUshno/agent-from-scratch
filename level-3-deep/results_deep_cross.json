@@ -1,0 +1,155 @@
+{
+  "with_critique": {
+    "matched": 6,
+    "rows": [
+      {
+        "answer": "Ottawa",
+        "critique_outcome": "pass",
+        "expected_answer": "Ottawa",
+        "matched": true,
+        "steps": 1,
+        "success": true,
+        "task_id": "X01",
+        "type": "memory_write"
+      },
+      {
+        "answer": "Ottawa",
+        "critique_outcome": "pass",
+        "expected_answer": "Ottawa",
+        "matched": true,
+        "steps": 1,
+        "success": true,
+        "task_id": "X02",
+        "type": "recall_persist"
+      },
+      {
+        "answer": 35,
+        "critique_outcome": "pass",
+        "expected_answer": 35,
+        "matched": true,
+        "steps": 1,
+        "success": true,
+        "task_id": "X03",
+        "type": "memory_write"
+      },
+      {
+        "answer": 40,
+        "critique_outcome": "flag_then_fix",
+        "expected_answer": 40,
+        "matched": true,
+        "steps": 6,
+        "success": true,
+        "task_id": "X04",
+        "type": "multi_step"
+      },
+      {
+        "answer": 40,
+        "critique_outcome": "pass",
+        "expected_answer": 40,
+        "matched": true,
+        "steps": 1,
+        "success": true,
+        "task_id": "X05",
+        "type": "recall_persist"
+      },
+      {
+        "answer": "Ottawa",
+        "critique_outcome": "pass",
+        "expected_answer": "Ottawa",
+        "matched": true,
+        "steps": 1,
+        "success": true,
+        "task_id": "X06",
+        "type": "recall_persist"
+      }
+    ],
+    "summary": {
+      "expected_success_tasks": 6,
+      "mean_steps": 1.8333,
+      "outcomes": {
+        "flag_then_fix": 1,
+        "pass": 5
+      },
+      "revisions": 1,
+      "succeeded": 6,
+      "success_rate": 1.0,
+      "total_steps": 11
+    }
+  },
+  "without_critique": {
+    "matched": 6,
+    "rows": [
+      {
+        "answer": "Ottawa",
+        "critique_outcome": "not_run",
+        "expected_answer": "Ottawa",
+        "matched": true,
+        "steps": 1,
+        "success": true,
+        "task_id": "X01",
+        "type": "memory_write"
+      },
+      {
+        "answer": "Ottawa",
+        "critique_outcome": "not_run",
+        "expected_answer": "Ottawa",
+        "matched": true,
+        "steps": 1,
+        "success": true,
+        "task_id": "X02",
+        "type": "recall_persist"
+      },
+      {
+        "answer": 35,
+        "critique_outcome": "not_run",
+        "expected_answer": 35,
+        "matched": true,
+        "steps": 1,
+        "success": true,
+        "task_id": "X03",
+        "type": "memory_write"
+      },
+      {
+        "answer": 35,
+        "critique_outcome": "not_run",
+        "expected_answer": 40,
+        "matched": true,
+        "steps": 3,
+        "success": false,
+        "task_id": "X04",
+        "type": "multi_step"
+      },
+      {
+        "answer": 35,
+        "critique_outcome": "not_run",
+        "expected_answer": 40,
+        "matched": true,
+        "steps": 1,
+        "success": false,
+        "task_id": "X05",
+        "type": "recall_persist"
+      },
+      {
+        "answer": "Ottawa",
+        "critique_outcome": "not_run",
+        "expected_answer": "Ottawa",
+        "matched": true,
+        "steps": 1,
+        "success": true,
+        "task_id": "X06",
+        "type": "recall_persist"
+      }
+    ],
+    "summary": {
+      "expected_success_tasks": 6,
+      "mean_steps": 1.3333,
+      "outcomes": {
+        "not_run": 6
+      },
+      "revisions": 0,
+      "succeeded": 4,
+      "success_rate": 0.6667,
+      "total_steps": 8
+    }
+  }
+}
