@@ -568,7 +568,7 @@ function Errors() {
     return Object.entries(m).sort((a, b) => b[1].tasks.length - a[1].tasks.length);
   }, []);
   const max = Math.max(...kinds.map(([, v]) => v.tasks.length));
-  const W = 960, rowH = 38, H = kinds.length * rowH + 24, l = 170, r = 60;
+  const W = 960, rowH = 38, H = kinds.length * rowH + 24, l = 170, r = 220;
   const x = (n) => l + ((W - l - r) * n) / max;
   return (
     <section id="errors" className="card window reveal" data-title="tasks_deep.json — seeded error taxonomy">
@@ -768,7 +768,7 @@ function Limits() {
       <div className="bars" style={{ marginTop: 16 }}>
         {grade.deductions.map((d) => (
           <div className="bar-row" key={d.points + d.text}>
-            <div className="lab"><span>{d.text}</span><b>−{d.points}</b></div>
+            <div className="lab"><span>{d.text.charAt(0).toUpperCase() + d.text.slice(1)}</span><b>−{d.points}</b></div>
             <div className="track"><div className="fill" style={{ width: `${(d.points / max) * 100}%`, background: 'var(--warn)' }} /></div>
           </div>
         ))}
