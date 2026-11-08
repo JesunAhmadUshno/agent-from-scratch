@@ -1,17 +1,35 @@
 # PUBLICITY: agent-from-scratch (P07)
 
+## Fan-out set (from the old README)
+
+Written fan-out set for v1.0, dated 2026-11-05, in fanout/:
+
+- fanout/blog-post.md: "One Agent, No Framework", the full story
+  with the main results claim gated by Jev claim_check (model
+  jev-1.13.0, noul 0.76, route REVIEW, no block).
+- fanout/tutorial.md: course module P07-agent-from-scratch. Every
+  command in it was executed and passed on 2026-11-05 (all three
+  runners, all per-level tests, full suite at 52 tests).
+- fanout/website-page.md: project page copy only, not published.
+- fanout/linkedin-post.md: DRAFT NOT POSTED, link as the
+  first-comment line per the LinkedIn rule.
+- fanout/paper-candidate.md: failure taxonomy and self-critique
+  brief at CANDIDATE. Submission is Jesun's tap, nothing submitted.
+- fanout/release-notes.md: draft notes for the live releases
+  v0.1, v0.5, and v1.0.
+
+The loop never posts to social: all social channels are held with
+named reasons below.
+
 Publicity log under the documentation and publishing standard,
-Section 7. Every finished level produces its written fan-out set,
-each piece graded on the 1,000-point publicity rubric (accuracy 300,
-research 200, gap fit 200, clarity 150, reach format 150), ship line
-900. Drafts are prepared by the loop. Actual social posting follows
+Section 7. Every finished level produces its written fan-out set
+(review scores are internal). Drafts are prepared by the loop. Actual social posting follows
 the standing platform rules and gates. The loop itself never posts
 to social.
 
 Fan-out set date: 2026-11-05 (Sprint 2 early work). Project state:
 v1.0, Learn, Build, and compressed Deep done 2026-11-05, 52 tests
-passing. Level grades on record: Learn 8,500 of 10,000, Build
-8,500 of 10,000, Deep 7,900 of 10,000. Deep detail: a self-critique
+passing. Deep detail: a self-critique
 loop where success on the 28 expected-success tasks is 15 of 28
 (0.5357) without critique and 28 of 28 (1.000) with critique,
 critique outcomes matched on 32 of 32, false-critique rate 0.0,
@@ -37,47 +55,6 @@ plainly in every fan-out piece.
 | Book chapter | Draft angle in fanout/blog-post.md and SPEC.md ("One Agent, No Framework"). Held: chapter draft follows the finished project set; not a published chapter. |
 | Paper candidate | Draft brief in fanout/paper-candidate.md (failure taxonomy, shared with the P06 track). Submission is Jesun's tap. Nothing submitted, no venue contacted. The publications tracker is updated by the coordinator, not by this cycle. |
 
-## Publicity grades (1,000-point rubric, ship line 900)
-
-| Piece | Accuracy /300 | Research /200 | Gap fit /200 | Clarity /150 | Reach format /150 | Total /1000 |
-| --- | --- | --- | --- | --- | --- | --- |
-| fanout/blog-post.md | 295 | 190 | 195 | 145 | 140 | 965 |
-| fanout/tutorial.md | 300 | 185 | 195 | 148 | 142 | 970 |
-| fanout/website-page.md | 295 | 180 | 190 | 148 | 145 | 958 |
-| fanout/linkedin-post.md | 290 | 175 | 190 | 145 | 140 | 940 |
-| fanout/paper-candidate.md | 295 | 195 | 195 | 140 | 130 | 955 |
-| fanout/release-notes.md | 298 | 185 | 185 | 145 | 135 | 948 |
-
-All six pieces are at or above the 900 ship line. No piece was
-shipped ungraded. Overall fan-out grade: 9,560 of 10,000 (mean of
-the six piece totals, 956 of 1,000).
-
-## Named deductions (unclosable in this cycle)
-
-- Blog post, minus 35: research is condensed from DOSSIER.md v1,
-  whose prior art section is brief (minus 10 research); synthetic
-  same-author suites limit how far the results travel, stated in
-  the piece (minus 10 reach, minus 5 accuracy for reader
-  interpretation risk, minus 5 gap fit, minus 5 clarity).
-- Tutorial, minus 30: research framing is thinner than the blog by
-  design, because the module teaches runs rather than the field
-  (minus 15 research); no worked example beyond the shipped suites
-  (minus 5 gap fit, minus 2 clarity, minus 8 reach).
-- Website page, minus 42: condensed research (minus 20), condensed
-  gap framing (minus 10), and the page is copy only, not a live
-  page (minus 5 reach, minus 5 accuracy, minus 2 clarity).
-- LinkedIn post, minus 60: short form compresses the research and
-  the failure mode detail (minus 25 research, minus 10 accuracy,
-  minus 10 gap fit, minus 5 clarity, minus 10 reach, because the
-  post is a held draft and carries no live link in the body by rule).
-- Paper candidate, minus 45: this is a brief, not a drafted paper
-  (minus 20 reach, minus 10 clarity); venue is classed, not named
-  (minus 5 research, minus 5 gap fit, minus 5 accuracy for the
-  synthetic-only evidence base the paper must carry).
-- Release notes, minus 52: notes summarise releases that already
-  exist, so research and gap framing are summary grade (minus 15
-  research, minus 15 gap fit); format is repo-bound (minus 15
-  reach, minus 2 accuracy, minus 5 clarity).
 
 ## Jev gate (2026-11-05)
 
@@ -124,25 +101,9 @@ to watch.
 | PyPI publishing | Held: needs a PyPI token, a new credential. Jesun's tap only. Not set up. |
 | Social channels (LinkedIn, X, Facebook, Instagram, Threads) | Held: no posts made. The loop never posts to social; Threads waits for Jesun's tap per post under the standing gates. |
 
-Publicity grade for this polish pack log piece, on the 1,000
-point rubric (accuracy 300, research 200, gap fit 200, clarity
-150, reach format 150), ship line 900:
+Known limits of the polish pack: the release workflow was unproven
+until a v* tag release ran it; ruff scope is the E, F, I subset, not
+the full rule set; the docs site was a single summary page (the live
+dashboard in site/ came later, 2026-11-07); Greetings had no live
+first-interaction proof yet.
 
-| Piece | Accuracy /300 | Research /200 | Gap fit /200 | Clarity /150 | Reach /150 | Total /1000 |
-| --- | --- | --- | --- | --- | --- | --- |
-| PUBLICITY.md polish pack section (2026-11-05) | 295 | 180 | 195 | 145 | 95 | 910 |
-
-At or above the 900 ship line. That is 9,100 of 10,000 on the
-pack scale. Named deductions: release workflow unproven until a
-v* tag release runs it (minus 300 on the pack scale); ruff scope
-is the E, F, I subset, not the full rule set (minus 300); the
-docs site is a single summary page, not a full documentation set
-(minus 200); Greetings has no live first-interaction proof yet
-(minus 100). On the rubric above those map mainly to research
-minus 20 (the pack is a standard applied across repos and this
-section records its application rather than new research), reach
-minus 55 (docs page is copy in this pull request with no live
-Pages claim yet, PyPI publishing is held, and no social channel
-carries this piece by the standing gates), accuracy minus 5, gap
-fit minus 5, and clarity minus 5 for summary compression of the
-full pack standard, which lives in the batch files.

@@ -31,11 +31,11 @@ PROPOSED. This post makes no novelty claim beyond the measured work
 below.
 
 Present: v1.0 closes three levels on 2026-11-05. Learn built the
-core loop small and checkable by eye (grade 8,500 of 10,000). Build
-added planning, persistent JSON memory, and recovery by error class
-(grade 8,500 of 10,000). Compressed Deep added a self-critique loop:
+core loop small and checkable by eye. Build
+added planning, persistent JSON memory, and recovery by error class.
+Compressed Deep added a self-critique loop:
 an independent deterministic critic that recomputes each draft
-answer and triggers a bounded clean re-run (grade 7,900 of 10,000).
+answer and triggers a bounded clean re-run.
 
 Future: the rest of the v2 Deep scope is named in ROADMAP.md in the
 repo as the v1.1 backlog. It includes a natural error study,
@@ -69,8 +69,6 @@ max_steps 10 by default and one retry with corrected arguments.
 | Tests | 16 |
 | Determinism | results_learn.json identical across two runs (hash verified) |
 
-Grade: 8,500 of 10,000, per the batch ledger.
-
 ### Level 2, Build (release v0.5)
 
 Build is a plan-then-execute agent. The planner is deterministic
@@ -90,8 +88,6 @@ tools: unit_converter and kb_search.
 | Recoveries | retry_correct 1, fallback_tool 1, skip_step 1, abort 2 |
 | Tests | 19 Build, 35 in total |
 | Determinism | results_build.json identical across two runs (diff verified) |
-
-Grade: 8,500 of 10,000, per the batch ledger.
 
 ### Level 3, Deep, compressed (release v1.0)
 
@@ -125,14 +121,11 @@ recall of a key never stored, and a search with no matching entry).
 
 Tests: 17 Deep tests, 52 in total with Learn and Build.
 
-Grade: 7,900 of 10,000. Deductions are itemized in the Deep README:
-minus 100 for running on the Muse VM instead of BlackBoxV2, minus
-600 for seeded synthetic errors on a same-author suite, minus 450
-because critic and executor share tools, minus 350 for toy scale,
-minus 250 for a steps-only cost model, minus 200 for no cross-task
-persistence case in the Deep suite, and minus 150 because revision
-is a clean re-run rather than a targeted correction. Total
-deductions 2,100, and 10,000 minus 2,100 is 7,900.
+Named limits: running on the Muse VM instead of BlackBoxV2, seeded
+synthetic errors on a same-author suite, critic and executor sharing
+tools, toy scale, a steps-only cost model, no cross-task persistence
+case in the Deep suite, and revision as a clean re-run rather than a
+targeted correction.
 
 ## Honest limits
 
@@ -160,7 +153,7 @@ deductions 2,100, and 10,000 minus 2,100 is 7,900.
 - Compressed Deep is not the full v2 Deep scope. The remainder is
   the named v1.1 backlog in ROADMAP.md.
 - The runs executed on the Muse VM, not the assigned BlackBoxV2
-  node. That deduction is named in each level grade.
+  node.
 
 ## Where to go next
 

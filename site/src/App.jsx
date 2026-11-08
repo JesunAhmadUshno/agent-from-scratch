@@ -10,22 +10,24 @@ import stats from '../../level-3-deep/results_deep_stats.json';
 import crossTasks from '../../level-3-deep/tasks_deep_cross.json';
 import cross from '../../level-3-deep/results_deep_cross.json';
 import timing from '../../level-3-deep/timing_deep.json';
-import deepReadme from '../../level-3-deep/README.md?raw';
-import roadmap from '../../ROADMAP.md?raw';
+import readme from '../../README.md?raw';
+import report from '../../REPORT.md?raw';
 import ciYml from '../../.github/workflows/ci.yml?raw';
 import { runLearnTask, BuildAgent, DeepAgent, runDeepMode, summarizeDeep, CONVERSIONS, KB } from './agent.js';
 import { wilson, mcnemarExact } from './stats.js';
-import { parseGrade, parseRecorded, parseBacklog, parseCi, countTests } from './docs.js';
+import { parseVerdict, parseThreats, parseRecorded, parseBacklog, parseCi, countTests } from './docs.js';
 
 const REPO = 'https://github.com/JesunAhmadUshno/agent-from-scratch';
 const blob = (p) => `${REPO}/blob/main/${p}`;
 const pct = (x, d = 1) => `${(x * 100).toFixed(d)}%`;
 const show = (v) => (v === null || v === undefined ? 'none' : typeof v === 'string' ? `"${v}"` : JSON.stringify(v));
 
-const testCount = countTests(Object.values(import.meta.glob('../../tests/test_*.py', { query: '?raw', import: 'default', eager: true })));
-const grade = parseGrade(deepReadme);
-const recorded = parseRecorded(deepReadme);
-const backlog = parseBacklog(roadmap);
+// The repo layout test is left out: it is a repo check, not an agent test, and its fixtures quote the old grade lines.
+const testCount = countTests(Object.values(import.meta.glob(['../../tests/test_*.py', '!../../tests/test_layout.py'], { query: '?raw', import: 'default', eager: true })));
+const verdict = parseVerdict(readme);
+const threats = parseThreats(report);
+const recorded = parseRecorded(report);
+const backlog = parseBacklog(report);
 const ci = parseCi(ciYml);
 const RECORDED = `recorded run, Python ${recorded.python}, ${recorded.date}`;
 const S = deep.summary;
@@ -59,10 +61,10 @@ function MenuBar() {
     <div className="menubar" role="banner">
       <span className="apple" aria-hidden="true">◆</span>
       <a className="app" href="#top">agent-from-scratch</a>
-      <a className="m" href={blob('level-1-learn/README.md')}>Learn</a>
-      <a className="m" href={blob('level-2-build/README.md')}>Build</a>
-      <a className="m" href={blob('level-3-deep/README.md')}>Deep</a>
-      <a className="m" href={blob('docs/research-review.md')}>Review</a>
+      <a className="m" href={blob('README.md')}>Abstract</a>
+      <a className="m" href={blob('PROPOSAL.md')}>Proposal</a>
+      <a className="m" href={blob('REPORT.md')}>Report</a>
+      <a className="m" href={blob('CHANGELOG.md')}>Changelog</a>
       <span className="spacer" />
       <span className="status"><i /> {S.outcome_matched} of {S.total} outcomes matched</span>
       <a href={REPO}>GitHub ↗</a>
@@ -133,7 +135,7 @@ function Hero() {
   return (
     <header className="card hero window" id="top" data-title="agent-from-scratch — README.md">
       <div className="head">
-        <p className="eyebrow">Three levels · Python standard library · v1.0</p>
+        <p className="eyebrow">Three levels · Python standard library · Verdict: {verdict}</p>
         <span className="pill warn">● Errors seeded on purpose</span>
       </div>
       <h1>An agent loop with no framework, and a critic that <em>checks its own work</em>.</h1>
@@ -145,14 +147,14 @@ function Hero() {
       <p className="sub"><b>The planner and the critic are deterministic code, not language models.</b> They call no API and learn nothing.</p>
       <div className="actions">
         <a className="btn primary" href="#playground">Run the agent in your browser</a>
-        <a className="btn ghost" href={blob('level-3-deep/README.md')}>Read the Deep write-up</a>
+        <a className="btn ghost" href={blob('REPORT.md')}>Read the report</a>
         <span className="hint">Every task reruns with <code>python level-3-deep/run_deep.py</code></span>
       </div>
       <div className="tiles">
         <div className="tile"><div className="num">{pct(S.success_rate_without_critique)} → {pct(S.success_rate_with_critique, 0)}</div><div className="cap">Success without vs with critique ({S.succeeded_without_critique} → {S.succeeded_with_critique} of {S.expected_success_tasks})</div></div>
         <div className="tile"><div className="num">{S.false_critique_rate.toFixed(1)}</div><div className="cap">False-critique rate ({S.false_critiques} of {S.correct_drafts} correct drafts flagged)</div></div>
         <div className="tile"><div className="num">{S.mean_steps_without_critique.toFixed(2)} → {S.mean_steps_with_critique.toFixed(2)}</div><div className="cap">Mean tool steps per task, the price of checking</div></div>
-        <div className="tile"><div className="num">{testCount}</div><div className="cap">Unit tests in <code>tests/</code>, counted at build time</div></div>
+        <div className="tile"><div className="num">{testCount}</div><div className="cap">Agent unit tests in <code>tests/</code>, counted at build time</div></div>
       </div>
     </header>
   );
@@ -474,7 +476,7 @@ function Playground() {
             <div className="tile"><div className="num">{result.without.steps} → {result.row.steps}</div><div className="cap">Tool steps without vs with critique</div></div>
           </div>
           <div style={{ marginTop: 16 }}><Events events={result.row.events} upTo={upTo} label="Live run: draft, critique, revision" /></div>
-          <p className="hint">Your task has no label, so there is no success score, only what the critic found. The critic recomputes from your task fields with the same tools, which is why it catches a seeded slip every time: the same circularity the Deep write-up deducts for.</p>
+          <p className="hint">Your task has no label, so there is no success score, only what the critic found. The critic recomputes from your task fields with the same tools, which is why it catches a seeded slip every time: the same circularity REPORT.md names as its first threat.</p>
         </>
       )}
     </section>
@@ -751,29 +753,23 @@ const BACKLOG_STATUS = {
   3: ['done', 'Targeted revision measured above'],
   4: ['done', 'Six-task shared-memory suite above'],
   5: ['partial', 'Wall-clock timing added; the knowledge base is still five entries'],
-  6: ['partial', 'Taxonomy table on this page and in docs/research-review.md'],
+  6: ['partial', 'Taxonomy table on this page and in REPORT.md'],
   7: ['done', 'Rounds 0 to 3 measured above'],
 };
 
 function Limits() {
-  const max = Math.max(...grade.deductions.map((d) => d.points));
   return (
-    <section id="limits" className="card window reveal" data-title="README.md — limits and self-grade">
+    <section id="limits" className="card window reveal" data-title="REPORT.md — threats to validity">
       <p className="eyebrow">Honest limits</p>
       <h2>What this does <em>not</em> show.</h2>
       <p className="sub">
-        The Deep write-up grades itself {grade.grade.toLocaleString('en-US')} of {grade.outOf.toLocaleString('en-US')}, a self-grade, with {grade.total.toLocaleString('en-US')} points of named deductions quoted below from <a href={blob('level-3-deep/README.md')}>level-3-deep/README.md</a>.
-        The largest is the one that matters most: the critic is scored on errors built for it.
+        {threats.length} named threats, largest first, quoted from <a href={blob('REPORT.md')}>REPORT.md</a>.
+        The first is the one that matters most: the critic is scored on errors built for it.
       </p>
-      <div className="bars" style={{ marginTop: 16 }}>
-        {grade.deductions.map((d) => (
-          <div className="bar-row" key={d.points + d.text}>
-            <div className="lab"><span>{d.text.charAt(0).toUpperCase() + d.text.slice(1)}</span><b>−{d.points}</b></div>
-            <div className="track"><div className="fill" style={{ width: `${(d.points / max) * 100}%`, background: 'var(--warn)' }} /></div>
-          </div>
-        ))}
-      </div>
-      <h3 style={{ marginTop: 24 }}>The v1.1 backlog from <a href={blob('ROADMAP.md')}>ROADMAP.md</a>, and where this release leaves it</h3>
+      <ol style={{ marginTop: 16 }}>
+        {threats.map((t) => <li key={t}>{t}</li>)}
+      </ol>
+      <h3 style={{ marginTop: 24 }}>The v1.1 backlog from <a href={blob('REPORT.md')}>REPORT.md</a>, and where this release leaves it</h3>
       <div style={{ overflowX: 'auto', marginTop: 8 }}>
         <table>
           <thead><tr><th>#</th><th>Backlog item</th><th>Status</th><th>Why</th></tr></thead>
@@ -791,12 +787,11 @@ function Limits() {
 
 function Reproduce() {
   const docs = [
-    ['SPEC.md', 'Spec', 'Scope and acceptance criteria'],
-    ['level-1-learn/README.md', 'Learn write-up', 'The loop, tools, recovery'],
-    ['level-2-build/README.md', 'Build write-up', 'Planner, memory, strategies'],
-    ['level-3-deep/README.md', 'Deep write-up', 'Critic, suite, grade'],
-    ['docs/research-review.md', 'Research review', 'Graded against a PhD rubric'],
-    ['ROADMAP.md', 'Roadmap', 'Shipped and v1.1 backlog'],
+    ['README.md', 'Abstract', 'Question, headline, verdict, reproduce'],
+    ['PROPOSAL.md', 'Proposal', 'Scope and plans as committed (not pre-registered)'],
+    ['REPORT.md', 'Report', 'Every stage, threats, research review, backlog'],
+    ['CHANGELOG.md', 'Changelog', 'Releases and changes'],
+    ['docs/decisions/', 'Decisions', 'Hard-to-reverse choices'],
   ];
   return (
     <section id="reproduce" className="card window reveal" data-title="Terminal — .github/workflows/ci.yml">
