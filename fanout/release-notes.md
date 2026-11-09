@@ -21,7 +21,6 @@ URL: https://github.com/JesunAhmadUshno/agent-from-scratch/releases/tag/v0.1
   corrected to 9 * 9 = 81).
 - Tests: 16 unit tests in tests/test_learn_agent.py, plus the
   scaffold smoke test.
-- Grade: 8,500 of 10,000, per the batch ledger.
 - Limits carried in the release: scripted policy per task type,
   in-memory memory only, five-entry knowledge base, arithmetic only.
 
@@ -40,7 +39,6 @@ URL: https://github.com/JesunAhmadUshno/agent-from-scratch/releases/tag/v0.5
   replans 3, recoveries retry_correct 1, fallback_tool 1,
   skip_step 1, abort 2.
 - Tests: 19 Build unit tests, 35 in total with Learn.
-- Grade: 8,500 of 10,000, per the batch ledger.
 - Limits carried in the release: scripted planner, one JSON file
   with no locking, keyword search only, synthetic same-author suite.
 
@@ -65,7 +63,5 @@ URL: https://github.com/JesunAhmadUshno/agent-from-scratch/releases/tag/v1.0
   0.0 (0 of 15 correct drafts); total revisions 14; mean steps
   1.3438 without critique and 2.0 with critique.
 - Tests: 17 Deep unit tests, 52 in total with Learn and Build.
-- Grade: 7,900 of 10,000, deductions itemized in the Deep README
-  (total deductions 2,100).
 - The rest of the v2 Deep scope is the v1.1 backlog in ROADMAP.md.
   It is not part of v1.0 and is not claimed by these notes.

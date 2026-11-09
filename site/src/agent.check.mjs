@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { callTool, runLearnSuite, runBuildSuite, runDeepSuite, runDeepMode, summarizeDeep } from './agent.js';
 import { wilson, mcnemarExact } from './stats.js';
-import { parseGrade, parseRecorded, parseBacklog, parseCi, countTests } from './docs.js';
+import { parseVerdict, parseThreats, parseRecorded, parseBacklog, parseCi, countTests } from './docs.js';
 
 const read = (p) => JSON.parse(fs.readFileSync(new URL(`../../${p}`, import.meta.url), 'utf8'));
 const round4 = (x) => Number(x.toFixed(4));
@@ -57,12 +57,13 @@ assert.equal(exp.filter((r) => !r.success && wo[r.task_id]).length, st.mcnemar.b
 
 // Text the page quotes from the repo's docs.
 const text = (p) => fs.readFileSync(new URL(`../../${p}`, import.meta.url), 'utf8');
-const g = parseGrade(text('level-3-deep/README.md'));
-assert.equal(g.deductions.length, 7);
-assert.equal(g.deductions.reduce((a, d) => a + d.points, 0), g.total);
-assert.equal(g.outOf - g.total, g.grade);
-assert.deepStrictEqual(parseRecorded(text('level-3-deep/README.md')), { date: '2026-11-05', python: '3.12' });
-assert.equal(parseBacklog(text('ROADMAP.md')).length, 7);
+const report = text('REPORT.md');
+assert.equal(parseVerdict(text('README.md')), 'Functional; not pre-registered');
+const threats = parseThreats(report);
+assert.equal(threats.length, 7);
+assert.ok(threats.every((t) => !/\d,\d{3}|grade/i.test(t)), 'threats carry no grade');
+assert.deepStrictEqual(parseRecorded(report), { date: '2026-11-05', python: '3.12' });
+assert.equal(parseBacklog(report).length, 7);
 const ci = parseCi(text('.github/workflows/ci.yml'));
 assert.ok(ci.versions.length >= 2 && ci.steps.some((s) => s.run.includes('python level-3-deep/run_deep.py')));
 const testSrc = fs.readdirSync(new URL('../../tests/', import.meta.url)).filter((f) => /^test_.*\.py$/.test(f)).map((f) => text(`tests/${f}`));

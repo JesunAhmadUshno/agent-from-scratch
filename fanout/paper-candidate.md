@@ -114,7 +114,7 @@ and remain Jesun's call under the free-only rule.
   external model is used.
 - The Deep errors are seeded in six named kinds, designed for the
   critic. Wild error performance is unknown by an unmeasured
-  amount, as the Deep grade deduction states.
+  amount, as the Deep write-up's limits state.
 - The critic and the executor share tools, so tool-internal bugs
   are invisible to the critique.
 - Revision is a clean re-run, not a targeted correction, and cost

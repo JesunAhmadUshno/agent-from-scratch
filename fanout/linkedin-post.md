@@ -18,13 +18,11 @@ deterministic code, not LLMs. No model, no API, no credential.
 Learn: a tool-using loop (calculator, knowledge base lookup, word
 count, remember, recall) with one-retry recovery. 8 of 8 tasks
 matched expectations, 7 succeeded, and 1 recovered. 16 tests.
-Grade 8,500 of 10,000.
 
 Build: plan-then-execute, with the plan stored per result, at most
 one replan, persistent JSON memory, and recovery logged by name.
 20 of 20 tasks matched, success 1.0 on the 18 expected-success
-tasks, mean steps 1.5. 19 tests, 35 in total. Grade 8,500 of
-10,000.
+tasks, mean steps 1.5. 19 tests, 35 in total.
 
 Deep (compressed): a self-critique loop. The critic recomputes
 each draft answer independently and triggers a bounded clean
@@ -32,7 +30,7 @@ re-run. On a 32-task suite, success on the 28 expected-success
 tasks rose from 0.5357 without critique (15 of 28) to 1.000 with
 critique (28 of 28). Outcomes matched on 32 of 32, false-critique
 rate 0.0, mean steps 1.3438 without and 2.0 with. 52 tests in
-total. Grade 7,900 of 10,000, with deductions named in the repo.
+total. Limits are named in the repo.
 
 The honest limits, in the post and not in a footnote: synthetic
 suites only, written by the same author as the agent and the

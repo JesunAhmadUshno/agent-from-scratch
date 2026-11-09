@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "agent-from-scratch: one tool-using agent with planning, memory, recovery and self-critique, built with no framework"
+authors:
+  - family-names: Ushno
+    given-names: Jesun Ahmad
+repository-code: "https://github.com/JesunAhmadUshno/agent-from-scratch"
+url: "https://jesunahmadushno.github.io/agent-from-scratch/"
+license: Apache-2.0
+version: "1.0"
+date-released: 2026-11-05
