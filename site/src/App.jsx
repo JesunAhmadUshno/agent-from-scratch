@@ -109,7 +109,7 @@ function Field({ label, children }) {
 export default function App() {
   useReveal();
   return (
-    <div className="wrap">
+    <div className="wrap"><a className="skip" href="#top">Skip to content</a>
       <MenuBar />
       <div className="glow" aria-hidden="true" />
       <Hero />
@@ -126,14 +126,14 @@ export default function App() {
       <footer>
         Code: Apache-2.0. Every number on this page is read from the <code>level-*/</code> results files and the repo's own docs at build time.
         The playground runs a JavaScript port of the agents that the build checks against all 60 recorded Python rows.
-      </footer>
+      <nav className="support" aria-label="Support this work"><a href="https://github.com/sponsors/JesunAhmadUshno">Sponsor this work</a><a href="https://github.com/sponsors/JesunAhmadUshno">Donate</a><a href="https://buymeacoffee.com/jesun">Buy Me a Coffee</a><a href="https://calendly.com/jesunahmadushno/30min">Work with me</a></nav></footer>
     </div>
   );
 }
 
 function Hero() {
   return (
-    <header className="card hero window" id="top" data-title="agent-from-scratch — README.md">
+    <header className="card hero window" id="top" data-title="agent-from-scratch - README.md">
       <div className="head">
         <p className="eyebrow">Three levels · Python standard library · Verdict: {verdict}</p>
         <span className="pill warn">● Errors seeded on purpose</span>
@@ -187,7 +187,7 @@ function LoopDiagram() {
 function Loop() {
   const s = learn.summary;
   return (
-    <section id="loop" className="card window reveal" data-title="agent.py — Level 1 Learn · the loop">
+    <section id="loop" className="card window reveal" data-title="agent.py - Level 1 Learn · the loop">
       <div className="head">
         <div>
           <p className="eyebrow">Learn · the core loop</p>
@@ -234,7 +234,7 @@ function Plan() {
   const max = Math.max(...Object.values(counts));
   const W = 460, rowH = 40, H = 4 * rowH + 10, l = 120;
   return (
-    <section id="plan" className="card window reveal" data-title="agent_build.py — Level 2 Build · plan, then execute">
+    <section id="plan" className="card window reveal" data-title="agent_build.py - Level 2 Build · plan, then execute">
       <p className="eyebrow">Build · plan, then execute</p>
       <h2>Write the whole plan first, then <em>recover by error class</em>.</h2>
       <p className="sub">
@@ -386,7 +386,7 @@ function Playground() {
   const a = ALL[pick];
   const total = result ? (result.kind === 'recorded' ? Math.max(result.live.events.length, result.recEvents.length) : result.row.events.length) : 0;
   return (
-    <section id="playground" className="card window reveal" data-title="agent_run.js — live in your browser">
+    <section id="playground" className="card window reveal" data-title="agent_run.js - live in your browser">
       <div className="head">
         <div>
           <p className="eyebrow">Live playground</p>
@@ -503,7 +503,7 @@ function Critic() {
     return row.success ? 'var(--good)' : 'var(--bad)';
   };
   return (
-    <section id="critic" className="card window reveal" data-title="critic.py — Level 3 Deep · self-critique">
+    <section id="critic" className="card window reveal" data-title="critic.py - Level 3 Deep · self-critique">
       <div className="head">
         <div>
           <p className="eyebrow">Deep · draft, critique, revise</p>
@@ -573,7 +573,7 @@ function Errors() {
   const W = 960, rowH = 38, H = kinds.length * rowH + 24, l = 170, r = 220;
   const x = (n) => l + ((W - l - r) * n) / max;
   return (
-    <section id="errors" className="card window reveal" data-title="tasks_deep.json — seeded error taxonomy">
+    <section id="errors" className="card window reveal" data-title="tasks_deep.json - seeded error taxonomy">
       <p className="eyebrow">Error taxonomy</p>
       <h2>Six kinds of slip, each <em>written into a task</em>.</h2>
       <p className="sub">
@@ -620,7 +620,7 @@ function Ablation() {
   const rv = rounds.revision;
   const cw = cross.with_critique, co = cross.without_critique;
   return (
-    <section id="ablation" className="card window reveal" data-title="analyze_deep.py — rounds, revision, shared memory">
+    <section id="ablation" className="card window reveal" data-title="analyze_deep.py - rounds, revision, shared memory">
       <div className="head">
         <div>
           <p className="eyebrow">Ablation · new in this release</p>
@@ -705,7 +705,7 @@ function Intervals() {
   const x = (v) => l + v * (W - l - r);
   const num = (label, val, set, max) => <Field label={label}>{(fid) => <input id={fid} type="number" min={0} max={max} value={val} onChange={(e) => set(Math.max(0, Math.min(max, Math.round(+e.target.value || 0))))} />}</Field>;
   return (
-    <section id="stats" className="card window reveal" data-title="intervals.js — Wilson and McNemar">
+    <section id="stats" className="card window reveal" data-title="intervals.js - Wilson and McNemar">
       <p className="eyebrow">Uncertainty · new in this release</p>
       <h2>Significant on paper, <em>narrow in meaning</em>.</h2>
       <p className="sub">
@@ -759,7 +759,7 @@ const BACKLOG_STATUS = {
 
 function Limits() {
   return (
-    <section id="limits" className="card window reveal" data-title="REPORT.md — threats to validity">
+    <section id="limits" className="card window reveal" data-title="REPORT.md - threats to validity">
       <p className="eyebrow">Honest limits</p>
       <h2>What this does <em>not</em> show.</h2>
       <p className="sub">
@@ -794,7 +794,7 @@ function Reproduce() {
     ['docs/decisions/', 'Decisions', 'Hard-to-reverse choices'],
   ];
   return (
-    <section id="reproduce" className="card window reveal" data-title="Terminal — .github/workflows/ci.yml">
+    <section id="reproduce" className="card window reveal" data-title="Terminal - .github/workflows/ci.yml">
       <p className="eyebrow">Reproduce it</p>
       <h2>No dependencies, <em>no randomness</em>, same bytes every run.</h2>
       <p className="sub">These are the exact steps CI runs on Python {ci.versions.join(' and ')}, read from the workflow file. The runners write no timestamps, and the last step fails if any results file changes.</p>
